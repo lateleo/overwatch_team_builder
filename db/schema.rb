@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526185102) do
+ActiveRecord::Schema.define(version: 20160526192028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,14 +42,14 @@ ActiveRecord::Schema.define(version: 20160526185102) do
     t.integer  "health"
     t.integer  "armor"
     t.integer  "shields"
-    t.integer  "primary_weapon_id"
-    t.integer  "secondary_weapon_id"
-    t.integer  "ability_id1"
-    t.integer  "ability_id2"
+    t.integer  "weapon1_id"
+    t.integer  "weapon2_id"
+    t.integer  "ability1_id"
+    t.integer  "ability2_id"
     t.integer  "ultimate_id"
     t.integer  "passive_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "passives", force: :cascade do |t|
@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 20160526185102) do
   create_table "team_comps", force: :cascade do |t|
     t.string   "name"
     t.integer  "author_id"
-    t.integer  "hero_id1"
-    t.integer  "hero_id2"
-    t.integer  "hero_id3"
-    t.integer  "hero_id4"
-    t.integer  "hero_id5"
-    t.integer  "hero_id6"
+    t.integer  "hero1_id"
+    t.integer  "hero2_id"
+    t.integer  "hero3_id"
+    t.integer  "hero4_id"
+    t.integer  "hero5_id"
+    t.integer  "hero6_id"
     t.text     "objective"
     t.text     "description"
     t.integer  "rating"
