@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  role: MyString
+  secondary_role: MyString
+  health: 1
+  armor: 1
+  shields: 1
+  primary_weapon_id: 1
+  secondary_weapon_id: 1
+  ability_id1: 1
+  ability_id2: 1
+  ultimate_id: 1
+  passive_id: 1
+
+two:
+  name: MyString
+  role: MyString
+  secondary_role: MyString
+  health: 1
+  armor: 1
+  shields: 1
+  primary_weapon_id: 1
+  secondary_weapon_id: 1
+  ability_id1: 1
+  ability_id2: 1
+  ultimate_id: 1
+  passive_id: 1

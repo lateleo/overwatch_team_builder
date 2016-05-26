@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  author_id: 1
+  hero_id1: 1
+  hero_id2: 1
+  hero_id3: 1
+  hero_id4: 1
+  hero_id5: 1
+  hero_id6: 1
+  objective: MyText
+  description: MyText
+  rating: 1
+
+two:
+  name: MyString
+  author_id: 1
+  hero_id1: 1
+  hero_id2: 1
+  hero_id3: 1
+  hero_id4: 1
+  hero_id5: 1
+  hero_id6: 1
+  objective: MyText
+  description: MyText
+  rating: 1

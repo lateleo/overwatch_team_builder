@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  hero_id: 1
+  type: 
+  effect: MyText
+
+two:
+  name: MyString
+  hero_id: 1
+  type: 
+  effect: MyText
