@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526192028) do
+ActiveRecord::Schema.define(version: 20160526203927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160526192028) do
   create_table "abilities", force: :cascade do |t|
     t.string   "name"
     t.integer  "hero_id"
-    t.string   "type"
+    t.string   "category"
     t.string   "cooldown"
     t.text     "effect"
     t.datetime "created_at", null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20160526192028) do
   create_table "passives", force: :cascade do |t|
     t.string   "name"
     t.integer  "hero_id"
-    t.string   "type"
+    t.string   "category"
     t.text     "effect"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20160526192028) do
   create_table "ultimates", force: :cascade do |t|
     t.string   "name"
     t.integer  "hero_id"
-    t.string   "type"
+    t.string   "category"
     t.text     "effect"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20160526192028) do
     t.string   "name"
     t.integer  "hero_id"
     t.integer  "ammo"
-    t.string   "type"
+    t.string   "category"
     t.string   "fire_rate"
     t.text     "effect"
     t.string   "alt_name"
