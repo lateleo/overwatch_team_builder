@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526203927) do
+ActiveRecord::Schema.define(version: 20160527152159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 20160526203927) do
     t.string   "fire_rate"
     t.text     "effect"
     t.string   "alt_name"
-    t.string   "alt_type"
+    t.string   "alt_category"
     t.string   "alt_fire_rate"
     t.text     "alt_effect"
     t.datetime "created_at",    null: false
