@@ -8,6 +8,7 @@ Weapon.create(name: "Shuriken",
               fire_rate: "3 per second",
               effect: "Genji throws 3 deadly throwing stars in quick succession in a straight line, dealing 28 damage per shuriken. Capable of headshots.",
               alt_name: "Fan of Blades",
+              alt_category: "Damage",
               alt_fire_rate: "3 per second",
               alt_effect: "Genji throws 3 shuriken in a wider spread, dealing 28 damage per shuriken. Capable of headshots.")
 Ability.create(name: "Swift Strike",
@@ -348,6 +349,8 @@ Weapon.create(name: "Rivet Gun",
               category: "Damage",
               fire_rate: "2 per second",
               effect: "Torbjörn fires rivets at long range, dealing 70 damage. Capable of headshots.",
+              alt_name: "Rivet Gun",
+              alt_category: "Damage",
               alt_fire_rate: "1 per second (3 ammo per round)",
               alt_effect: "Torbjörn ejects 10 pellets of molten metal from his gun in a short, close-range burst, dealing up to 15 damage per pellet. Capable of headshots.")
 Weapon.create(name: "Forge Hammer",
@@ -391,6 +394,8 @@ Weapon.create(name: "Widow's Kiss",
               category: "Damage",
               fire_rate: "10 per second",
               effect: "Widowmaker fires the submachine gun attached to her sniper rifle, dealing 13 damage per round at close to medium range. Capable of headshots.",
+              alt_name: "Widow's Kiss",
+              alt_category: "Damage",
               alt_fire_rate: "1 per second (3 ammo per round)",
               alt_effect: "Widowmaker looks through the scope of her gun, charging her sniper rifle rounds. Damage dealt ranges from 17 to 150, depending on how charged the shot is before firing. Capable of headshots.")
 Ability.create(name: "Grappling Hook",
@@ -468,6 +473,7 @@ Weapon.create(name: "Rocket Hammer",
               effect: "Reinhardt’s Rocket Hammer is an exemplary melee weapon, able to deal 75 damage in a wide arc with every swing.",
               alt_name: "Barrier Field",
               alt_category: "Block",
+              alt_fire_rate: "N/A",
               alt_effect: "Reinhardt projects a broad, forward-facing energy shield, which can absorb 2000 damage before it is destroyed. Though Reinhardt can protect himself and his companions behind the shield, he cannot attack while sustaining it. The shield restores 225 health per second when inactive.")
 Ability.create(name: "Charge",
               hero_id: 14,
@@ -499,6 +505,8 @@ Weapon.create(name: "Scrap Gun",
               category: "Damage",
               fire_rate: "1 per second",
               effect: "Roadhog's Scrap Gun fires short-range blasts of 25 pellets of shrapnel with a wide spread, dealing 4-9 damage per pellet. Capable of headshots.",
+              alt_name: "Scrap Gun",
+              alt_category: "Damage",
               alt_fire_rate: "1.33 per second",
               alt_effect: "Roadhog's Scrap Gun launches a shrapnel ball that detonates farther away, scattering metal fragments from the point of impact and dealing 50 damage if it hits before impact.")
 Ability.create(name: "Chain Hook",
@@ -559,27 +567,25 @@ Weapon.create(name: "Particle Cannon",
               ammo: 100,
               category: "Damage",
               fire_rate: "20 per second",
-              effect: "Zarya’s mighty Particle Cannon unleashes a short-range beam of destructive energy, dealing 80-160 damage per second, depending on how much Energy she has.",
+              effect: "Zarya’s mighty Particle Cannon unleashes a short-range beam of destructive energy, dealing 80 damage per second. Damage blocked by either barrier increases damage dealt by up to 50% each, decreasing by 2% every second.",
+              alt_name: "Particle Cannon",
+              alt_category: "Damage",
               alt_fire_rate: "1 per second (25 ammo per round)",
-              alt_effect: "Zarya can lob an explosive charge to deal 46-92 damage to multiple opponents, with damage depending on how much Energy she has.")
+              alt_effect: "Zarya can lob an explosive charge to deal 46 damage to multiple opponents. Damage blocked by either barrier increases damage dealt by up to 50% each, decreasing by 2% every second.")
 Ability.create(name: "Particle Barrier",
               hero_id: 17,
               category: "Block",
               cooldown: "10 seconds",
-              effect: "Zarya's weapon can emit a personal barrier that shields her against incoming attacks for 2 seconds, generating 1% energy for every 4 damage blocked, up to 50%.")
+              effect: "Zarya's weapon can emit a personal barrier that shields her against incoming attacks for 2 seconds, increasing the damage of her weapon by 1% for every 4 damage blocked, up to 50%.")
 Ability.create(name: "Projected Barrier",
               hero_id: 17,
               category: "Block",
               cooldown: "8 seconds",
-              effect: "Zarya surrounds one of her teammates with an energy barrier that shields them against incoming attacks for 2 seconds, generating 1% energy for every 4 damage blocked, up to 50%.")
+              effect: "Zarya surrounds one of her teammates with an energy barrier that shields them against incoming attacks for 2 seconds, increasing the damage of her weapon by 1% for every 4 damage blocked, up to 50%.")
 Ultimate.create(name: "Graviton Surge",
                 hero_id: 17,
                 category: "Utility",
                 effect: "Zarya launches a gravity bomb that draws in enemy combatants for 4 seconds and deals 22 damage while they’re trapped.")
-Passive.create(name: "Energy",
-              hero_id: 17,
-              category: "Damage",
-              effect: "Generated by blocking damage with her Barriers, the damage dealt by Zarya's weapons is increased by a percentage equal to her current energy. Increase is capped at 100%, and decrease by 2% every second until more damage is blocked.")
 Hero.create(name: "Zarya",
             role: "Tank",
             health: 200,
@@ -587,8 +593,7 @@ Hero.create(name: "Zarya",
             weapon1_id: 20,
             ability1_id: 33,
             ability2_id: 34,
-            ultimate_id: 17,
-            passive_id: 8)
+            ultimate_id: 17)
 
 #-------------------------------------------------------------------------------
 #SUPPORT
@@ -629,7 +634,7 @@ Hero.create(name: "Lúcio",
             ability1_id: 35,
             ability2_id: 36,
             ultimate_id: 18,
-            passive_id: 9)
+            passive_id: 8)
 
 #MERCY
 Weapon.create(name: "Caduceus Staff",
@@ -637,6 +642,7 @@ Weapon.create(name: "Caduceus Staff",
               category: "Healing",
               fire_rate: "Continuous",
               effect: "Mercy creates a healing tether on the ally closest to Mercy's crosshairs, which remains for as long as Mercy holds down the primary fire button. The healing tether will continually restore 50 health per second to the tethered ally.",
+              alt_name: "Caduceus Staff",
               alt_category: "Buff",
               alt_fire_rate: "Continuous",
               alt_effect: "Mercy creates a damage tether that works similarly to the healing tether, boosting damage by 30% instead of healing the target.")
@@ -666,15 +672,17 @@ Hero.create(name: "Mercy",
             weapon2_id: 23,
             ability1_id: 37,
             ultimate_id: 19,
-            passive_id: 10)
+            passive_id: 9)
 
 #SYMMETRA
 Weapon.create(name: "Photon Projector",
               hero_id: 20,
-              ammo: "100",
+              ammo: 100,
               category: "Damage",
               fire_rate: "8 per second",
               effect: "Symmetra's weapon creates a beam that tethers to the first hostile target in range, dealing increasing damage for as long as the beam remains active, from 3 to 15 damage per round.",
+              alt_name: "Photon Projector",
+              alt_category: "Damage",
               alt_fire_rate: "None (Charged shot)",
               alt_effect: "The projector can also charge and release a slow-moving energy ball that deals 25-125 damage to all enemies it touches, and consumes up to 20 ammo based on the degree to which it was charged.")
 Ability.create(name: "Sentry Turret",
