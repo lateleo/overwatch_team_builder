@@ -594,151 +594,143 @@ Hero.create(name: "Zarya",
 #SUPPORT
 
 #LÚCIO
-Weapon.create(name:
-              hero_id:
-              ammo:
-              category:
-              fire_rate:
-              effect:
-              alt_name:
-              alt_category:
-              alt_fire_rate:
-              alt_effect: )
-Ability.create(name:
-              hero_id:
-              category:
-              cooldown:
-              effect: )
-Ability.create(name:
-              hero_id:
-              category:
-              cooldown:
-              effect: )
-Ultimate.create(name:
-                hero_id:
-                category:
-                effect: )
-Passive.create(name:
-              hero_id:
-              category:
-              effect: )
-Hero.create(name:
+Weapon.create(name: "Sonic Amplifier",
+              hero_id: 18,
+              ammo: 20,
+              category: "Damage",
+              fire_rate: "4 per second",
+              effect: "Lúcio shoots out a burst of four sonic projectiles, dealing 16 damage per round to any target they hit. "
+              alt_name: "Soundwave",
+              alt_category: "Damage, Utility",
+              alt_fire_rate: "None (4 second cooldown)",
+              alt_effect: "Lúcio shoots out a short ranged cone-shaped blast of sound that deals 25 damage and knocks back any enemy target it hits.")
+Ability.create(name: "Crossfade",
+              hero_id: 18,
+              category: "Healing, Mobility",
+              cooldown: "None",
+              effect: "Lúcio continuously energizes himself—and nearby teammates—with music. He can switch between two songs: one amplifies movement speed by 30%, while the other regenerates 12.5 health per second.")
+Ability.create(name: "Amp It Up",
+              hero_id: 18,
+              category: "Healing, Mobility",
+              cooldown: "12 seconds",
+              effect: "Lúcio increases the volume on his speakers, boosting the effects of his songs. For 3 seconds, his healing song restores 40 health per second, and his movement song increases movement speed by 110%.")
+Ultimate.create(name: "Sound Barrier",
+                hero_id: 18,
+                category: "Healing",
+                effect: "After a short cast time, Lúcio creates a massive, temporary shield on himself and any allies who are within Crossfade's range of effect of 500 additional health. This shield will gradually decay over its 6 second duration.")
+Passive.create(name: "Wall Ride",
+              hero_id: 18,
+              category: "Mobility",
+              effect: "When next to a wall, Lúcio can hold the jump button to begin to skate along the side of the wall. He will continue to skate forwards on the wall until he either comes to the end of that wall, or when he ends it by releasing the jump button.")
+Hero.create(name: "Lúcio",
             role: "Support",
-            health:
-            weapon1_id:
-            ability1_id:
-            ability2_id:
-            ultimate_id:
-            passive_id: )
+            health: 200,
+            weapon1_id: 21,
+            ability1_id: 35,
+            ability2_id: 36,
+            ultimate_id: 18,
+            passive_id: 9)
 
 #MERCY
-Weapon.create(name:
-              hero_id:
-              ammo:
-              category:
-              fire_rate:
-              effect:
-              alt_name:
-              alt_category:
-              alt_fire_rate:
-              alt_effect: )
-Weapon.create(name:
-              hero_id:
-              ammo:
-              category:
-              fire_rate:
-              effect:
-              alt_name:
-              alt_category:
-              alt_fire_rate:
-              alt_effect: )
-Ability.create(name:
-              hero_id:
-              category:
-              cooldown:
-              effect: )
-Ultimate.create(name:
-                hero_id:
-                category:
-                effect: )
-Passive.create(name:
-              hero_id:
-              category:
-              effect: )
-Hero.create(name:
+Weapon.create(name: "Caduceus Staff",
+              hero_id: 19,
+              category: "Healing",
+              fire_rate: "Continuous",
+              effect: "Mercy creates a healing tether on the ally closest to Mercy's crosshairs, which remains for as long as Mercy holds down the primary fire button. The healing tether will continually restore 50 health per second to the tethered ally."
+              alt_category: "Buff",
+              alt_fire_rate: "Continuous",
+              alt_effect: "Mercy creates a damage tether that works similarly to the healing tether, boosting damage by 30% instead of healing the target.")
+Weapon.create(name: "Caduceus Blaster",
+              hero_id: 19,
+              ammo: 20,
+              category: "Damage",
+              fire_rate: "5 per second",
+              effect: "Mercy shoots a stream of fast-moving projectiles from her sidearm, dealing 20 damage per round. Capable of headshots.")
+Ability.create(name: "Guardian Angel",
+              hero_id: 19,
+              category: "Mobility",
+              cooldown: "1.5 seconds",
+              effect: "Mercy flies towards a targeted ally, allowing her to reach them quickly and provide assistance in crucial moments.")
+Ultimate.create(name: "Resurrect",
+                hero_id: 19,
+                category: "Recovery",
+                effect: "Mercy radiates restorative power, bringing nearby dead allies back into the fight with full health.")
+Passive.create(name: "Angelic Descent",
+              hero_id: 19,
+              category: "Mobility",
+              effect: "Propelled by her Valkyrie suit, Mercy slows the speed of her descent from great heights.")
+Hero.create(name: "Mercy",
             role: "Support",
-            health:
-            weapon1_id:
-            weapon2_id:
-            ability1_id:
-            ultimate_id:
-            passive_id: )
+            health: 200,
+            weapon1_id: 22,
+            weapon2_id: 23,
+            ability1_id: 37,
+            ultimate_id: 19,
+            passive_id: 10)
 
 #SYMMETRA
-Weapon.create(name:
-              hero_id:
-              ammo:
-              category:
-              fire_rate:
-              effect:
-              alt_name:
-              alt_category:
-              alt_fire_rate:
-              alt_effect: )
-Ability.create(name:
-              hero_id:
-              category:
-              cooldown:
-              effect: )
-Ability.create(name:
-              hero_id:
-              category:
-              cooldown:
-              effect: )
-Ultimate.create(name:
-                hero_id:
-                category:
-                effect: )
-Hero.create(name:
+Weapon.create(name: "Photon Projector",
+              hero_id: 20,
+              ammo: "100",
+              category: "Damage",
+              fire_rate: "8 per second",
+              effect: "Symmetra's weapon creates a beam that tethers to the first hostile target in range, dealing increasing damage for as long as the beam remains active, from 3 to 15 damage per round."
+              alt_fire_rate: "None (Charged shot)",
+              alt_effect: "The projector can also charge and release a slow-moving energy ball that deals 25-125 damage to all enemies it touches, and consumes up to 20 ammo based on the degree to which it was charged.")
+Ability.create(name: "Sentry Turret",
+              hero_id: 20,
+              category: "Damage",
+              cooldown: "10 seconds (Max 3 charges)",
+              effect: "Symmetra sets up a small turret with 1 health that automatically fires speed-reducing blasts at the nearest enemy within range, dealing 25 damage per second. Up to 6 turrets can be present on the battlefield at once.")
+Ability.create(name: "Photon Shield",
+              hero_id: 20,
+              category: "Healing",
+              cooldown: "1 second",
+              effect: "Symmetra surrounds an ally with a hard-light shield, granting 25 shields and persisting as long as that ally remains alive.")
+Ultimate.create(name: "Teleporter",
+                hero_id: 20,
+                category: "Recovery",
+                effect: "Symmetra places a teleporter exit pad at her current location, and connects it to a teleporter entry pad at her team’s starting point. Allies can travel through the entry pad to the exit pad instantly, enabling them to return to the fight swiftly after being defeated.")
+Hero.create(name: "Symmetra",
             role: "Support",
             secondary_role: "Builder",
-            health:
-            shields:
-            weapon1_id:
-            ability1_id:
-            ability2_id:
-            ultimate_id: )
+            health: 100,
+            shields: 100,
+            weapon1_id: 24,
+            ability1_id: 38,
+            ability2_id: 39,
+            ultimate_id: 20)
 
 #ZENYATTA
-Weapon.create(name:
-              hero_id:
-              ammo:
-              category:
-              fire_rate:
-              effect:
-              alt_name:
-              alt_category:
-              alt_fire_rate:
-              alt_effect: )
-Ability.create(name:
-              hero_id:
-              category:
-              cooldown:
-              effect: )
-Ability.create(name:
-              hero_id:
-              category:
-              cooldown:
-              effect: )
-Ultimate.create(name:
-                hero_id:
-                category:
-                effect: )
-Hero.create(name:
+Weapon.create(name: "Orb of Destruction",
+              hero_id: 21,
+              ammo: 20,
+              category: "Damage",
+              fire_rate: "2.5 per second",
+              effect: "Zenyatta shoots fast-moving orb projectiles at an enemy, dealing 45 damage. Capable of headshots.",
+              alt_name: "Orb Volley",
+              alt_category: "Damage",
+              alt_fire_rate: "0.25 per second (fully charged)",
+              alt_effect: "Zenyatta prepares up to 5 orbs, firing them straight forwards in a rapid burst and dealing 35 damage per orb upon release.")
+Ability.create(name: "Orb of Harmony",
+              hero_id: 21,
+              category: "Healing",
+              cooldown: "None",
+              effect: "Zenyatta casts an orb over the shoulder of a targeted ally, restoring 30 health per second so long as Zenyatta remains alive and the ally does not leave Zenyatta's line-of-sight for more than 3 seconds, or until Zenyatta places another orb on an ally.")
+Ability.create(name: "Orb of Discord",
+              hero_id: 21,
+              category: "Debuff",
+              cooldown: "None",
+              effect: "Zenyatta attaches an orb to an opponent, amplifying the amount of damage they receive by 50% until they are out of Zenyatta's line of sight for more than 3 seconds, or until Zenyatta attaches the orb to another enemy.")
+Ultimate.create(name: "Transcendence",
+                hero_id: 21,
+                category: "Healing",
+                effect: "Zenyatta enters a state of heightened existence for 6 seconds, during which he cannot use abilities or weapons, but is immune to damage and automatically restores 100 health per second to himself and nearby allies.")
+Hero.create(name: "Zenyatta",
             role: "Support",
-            health:
-            shields:
-            weapon1_id:
-            ability1_id:
-            ability2_id:
-            ultimate_id: )
+            health: 50,
+            shields: 100,
+            weapon1_id: 25,
+            ability1_id: 40,
+            ability2_id: 41,
+            ultimate_id: 21)
