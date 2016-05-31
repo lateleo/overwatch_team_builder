@@ -599,7 +599,7 @@ Weapon.create(name: "Sonic Amplifier",
               ammo: 20,
               category: "Damage",
               fire_rate: "4 per second",
-              effect: "Lúcio shoots out a burst of four sonic projectiles, dealing 16 damage per round to any target they hit. "
+              effect: "Lúcio shoots out a burst of four sonic projectiles, dealing 16 damage per round to any target they hit. ",
               alt_name: "Soundwave",
               alt_category: "Damage, Utility",
               alt_fire_rate: "None (4 second cooldown)",
@@ -636,7 +636,7 @@ Weapon.create(name: "Caduceus Staff",
               hero_id: 19,
               category: "Healing",
               fire_rate: "Continuous",
-              effect: "Mercy creates a healing tether on the ally closest to Mercy's crosshairs, which remains for as long as Mercy holds down the primary fire button. The healing tether will continually restore 50 health per second to the tethered ally."
+              effect: "Mercy creates a healing tether on the ally closest to Mercy's crosshairs, which remains for as long as Mercy holds down the primary fire button. The healing tether will continually restore 50 health per second to the tethered ally.",
               alt_category: "Buff",
               alt_fire_rate: "Continuous",
               alt_effect: "Mercy creates a damage tether that works similarly to the healing tether, boosting damage by 30% instead of healing the target.")
@@ -674,7 +674,7 @@ Weapon.create(name: "Photon Projector",
               ammo: "100",
               category: "Damage",
               fire_rate: "8 per second",
-              effect: "Symmetra's weapon creates a beam that tethers to the first hostile target in range, dealing increasing damage for as long as the beam remains active, from 3 to 15 damage per round."
+              effect: "Symmetra's weapon creates a beam that tethers to the first hostile target in range, dealing increasing damage for as long as the beam remains active, from 3 to 15 damage per round.",
               alt_fire_rate: "None (Charged shot)",
               alt_effect: "The projector can also charge and release a slow-moving energy ball that deals 25-125 damage to all enemies it touches, and consumes up to 20 ammo based on the degree to which it was charged.")
 Ability.create(name: "Sentry Turret",
