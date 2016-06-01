@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527152159) do
+ActiveRecord::Schema.define(version: 20160601155004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160527152159) do
     t.text     "effect"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "icon_path"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -50,6 +51,8 @@ ActiveRecord::Schema.define(version: 20160527152159) do
     t.integer  "passive_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "portrait_path"
+    t.string   "icon_path"
   end
 
   create_table "passives", force: :cascade do |t|
@@ -59,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160527152159) do
     t.text     "effect"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "icon_path"
   end
 
   create_table "team_comps", force: :cascade do |t|
@@ -84,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160527152159) do
     t.text     "effect"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "icon_path"
   end
 
   create_table "users", force: :cascade do |t|
@@ -111,6 +116,8 @@ ActiveRecord::Schema.define(version: 20160527152159) do
     t.text     "alt_effect"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "icon_path"
+    t.string   "alt_icon_path"
   end
 
 end
