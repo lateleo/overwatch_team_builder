@@ -1,4 +1,9 @@
-<h1>TeamComps#index</h1>
-<p>Find me in app/views/team_comps/index.html.erb</p>
+<h1>Team Comps</h1>
 
 <%= link_to "New", new_team_comp_path %>
+
+<ul>
+  <% @team_comps.each do |comp| %>
+  <li><%= link_to comp.name, comp %></li>
+  <% end %>
+</ul>
