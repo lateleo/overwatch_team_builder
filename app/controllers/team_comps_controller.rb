@@ -1,6 +1,6 @@
 class TeamCompsController < ApplicationController
   def index
-    @abilities = TeamComp.all
+    @team_comps = TeamComp.all
   end
 
   def show

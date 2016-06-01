@@ -1,0 +1,21 @@
+<h1>Heroes</h1>
+
+<h3><%= image_tag "role-icons/offense-icon.png", size: "35x30"%>Offense</h3>
+<% @offense.each do |hero| %>
+  <%= link_to(image_tag(hero.icon_path, size: "56x50"), hero) %>
+<% end %>
+
+<h3><%= image_tag "role-icons/defense-icon.png", size: "35x30"%>Defense</h3>
+<% @defense.each do |hero| %>
+  <%= link_to(image_tag(hero.icon_path, size: "56x50"), hero) %>
+<% end %>
+
+<h3><%= image_tag "role-icons/tank-icon.png", size: "35x30"%>Tank</h3>
+<% @tank.each do |hero| %>
+  <%= link_to(image_tag(hero.icon_path, size: "56x50"), hero) %>
+<% end %>
+
+<h3><%= image_tag "role-icons/support-icon.png", size: "35x30"%>Support</h3>
+<% @support.each do |hero| %>
+  <%= link_to(image_tag(hero.icon_path, size: "56x50"), hero) %>
+<% end %>
