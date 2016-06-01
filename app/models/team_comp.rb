@@ -1,5 +1,10 @@
 class TeamComp < ActiveRecord::Base
 
+  validates :name, presence: true
+  validates :objective, presence: true
+  validates :description, presence: true
+  validates :author, presence: true
+
   has_many :comments
   belongs_to :author, class_name: "User"
   has_one :hero1, class_name: "Hero"
