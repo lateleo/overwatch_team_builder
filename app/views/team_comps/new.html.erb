@@ -1,28 +1,3 @@
 <h1>New Team Comp</h1>
 
-<%= form_for @team_comp do |f| %>
-
-<%= f.select :objective, objective_options, include_blank: true %>
-<%= f.label :objective %>
-
-<p><%= image_tag "hero-portraits/01-genji.png", size: "590x600" %><p>
-
-<p><%= image_tag "role-icons/offense-icon.png", size: "35x30" %>
-  <% @offense.each do |hero| %>
-  <%= image_tag hero.icon_path, size: "45x40" %>
-  <% end %>
-  <%= image_tag "role-icons/defense-icon.png", size: "35x30" %>
-  <% @defense.each do |hero| %>
-  <%= image_tag hero.icon_path, size: "45x40" %>
-  <% end %>
-  <%= image_tag "role-icons/tank-icon.png", size: "35x30" %>
-  <% @tank.each do |hero| %>
-  <%= image_tag hero.icon_path, size: "45x40" %>
-  <% end %>
-  <%= image_tag "role-icons/support-icon.png", size: "35x30" %>
-  <% @support.each do |hero| %>
-  <%= image_tag hero.icon_path, size: "45x40" %>
-  <% end %>
-</p>
-
-<% end %>
+<%= render 'form' %>

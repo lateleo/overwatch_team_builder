@@ -5,4 +5,10 @@ module TeamCompsHelper
         [objective, objective]
     end
   end
+
+  def hero_options
+    Hero.all.map do |hero|
+      [hero.name, hero.id]
+    end
+  end
 end
