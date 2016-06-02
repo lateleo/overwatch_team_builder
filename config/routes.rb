@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
 
-
   resources :team_comps
   resources :heroes, only: [:index, :show]
 
   root 'team_comps#index'
 
   resources :users, except: [:index]
-  # resources :sessions, except: [:edit, :update]
-  #
-  # get '/login', to: 'sessions#new', as: 'login'
-  # get '/logout', to: 'sessions#destroy', as: 'logout'
-  # get '/home', to: 'sessions#show', as: 'home'
+  resources :sessions, except: [:edit, :update]
+
+  get '/login', to: 'sessions#new', as: 'login'
+  get '/logout', to: 'sessions#destroy', as: 'logout'
 
 
 

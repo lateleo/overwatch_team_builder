@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
   validates :username, uniqueness: true
-  validates :name, presence: true
 
   has_many :comments, foreign_key: "author_id"
   has_many :team_comps, foreign_key: "author_id"
