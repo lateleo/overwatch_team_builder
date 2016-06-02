@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   resources :team_comps
-  resources :heroes, only: [:show]
+  resources :heroes, only: [:index, :show]
 
-  root 'heroes#index'
+  root 'team_comps#index'
 
 
 

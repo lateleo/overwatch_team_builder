@@ -1,7 +1,8 @@
 <h1><%= @hero.name %></h1>
 
 <ul>
-  <li><b>Role:</b> <%= @hero.role %></li>
+  <li><b>Role:</b> <%= image_tag "role-icons/#{@hero.role.downcase}-icon.png", size: "23x20"%>
+    <%= @hero.role %></li>
   <li><b>Health:</b> <%= @hero.health %></li>
   <% if @hero.armor %>
     <li><b>Armor:</b> <%= @hero.armor %></li>
