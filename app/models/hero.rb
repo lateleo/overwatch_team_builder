@@ -5,4 +5,6 @@ class Hero < ActiveRecord::Base
   belongs_to :ability2, class_name: "Ability"
   has_one :passive
   has_one :ultimate
+
+  has_many :team_comps
 end

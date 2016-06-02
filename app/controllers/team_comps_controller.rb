@@ -12,11 +12,12 @@ class TeamCompsController < ApplicationController
     @defense = Hero.where(role: "Defense")
     @tank = Hero.where(role: "Tank")
     @support = Hero.where(role: "Support")
-    @team_comp = TeamComp.new
+    @team_comp = TeamComp.new(author_id: current_user.id)
   end
 
   def create
     @team_comp = TeamComp.new(team_comp_params)
+    @team_comp.author_id = current_user.id
 
     if @team_comp.save
       redirect_to @team_comp, notice: "Team Comp successfully created."
@@ -48,6 +49,7 @@ class TeamCompsController < ApplicationController
   private
 
   def team_comp_params
-    params.require(:team_comp)
+    params.require(:team_comp).permit(:name, :author_id, :objective, :hero1_id,
+      :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id, :description)
   end
 end

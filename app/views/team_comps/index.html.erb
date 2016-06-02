@@ -4,8 +4,20 @@
   <%= link_to "New", new_team_comp_path %>
 <% end %>
 
-<ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rating</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @team_comps.each do |comp| %>
-  <li><%= link_to comp.name, comp %></li>
+  <tr>
+    <td><%= link_to comp.name, comp %></td>
+    <td><%= comp.rating %></td>
+    <td><%= link_to comp.author.username, comp.author %></td>
+  </tr>
   <% end %>
 </ul>

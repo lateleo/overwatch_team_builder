@@ -1,4 +1,16 @@
 <%= form_for @team_comp do |f| %>
+<% if f.object.errors.any? %>
+<div class="errors" id="errors">
+  <% if f.object.errors.any? %>
+    <ul>
+      <% f.object.errors.full_messages.each do |e| %>
+        <li><%= e %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<% end %>
+
 
 <div>
   <%= f.label :name %>
@@ -13,33 +25,33 @@
 <div><p></p></div>
 
 <div>
-  <%= f.label :hero1, "Hero 1" %>
-  <%= f.select :hero1, hero_options, include_blank: true %>
+  <%= f.label :hero1_id, "Hero 1" %>
+  <%= f.select :hero1_id, hero_options, include_blank: true %>
 </div>
 
 <div>
-  <%= f.label :hero2, "Hero 2" %>
-  <%= f.select :hero2, hero_options, include_blank: true %>
+  <%= f.label :hero2_id, "Hero 2" %>
+  <%= f.select :hero2_id, hero_options, include_blank: true %>
 </div>
 
 <div>
-  <%= f.label :hero3, "Hero 3" %>
-  <%= f.select :hero3, hero_options, include_blank: true %>
+  <%= f.label :hero3_id, "Hero 3" %>
+  <%= f.select :hero3_id, hero_options, include_blank: true %>
 </div>
 
 <div>
-  <%= f.label :hero4, "Hero 4" %>
-  <%= f.select :hero4, hero_options, include_blank: true %>
+  <%= f.label :hero4_id, "Hero 4" %>
+  <%= f.select :hero4_id, hero_options, include_blank: true %>
 </div>
 
 <div>
-  <%= f.label :hero5, "Hero 5" %>
-  <%= f.select :hero5, hero_options, include_blank: true %>
+  <%= f.label :hero5_id, "Hero 5" %>
+  <%= f.select :hero5_id, hero_options, include_blank: true %>
 </div>
 
 <div>
-  <%= f.label :hero6, "Hero 6" %>
-  <%= f.select :hero6, hero_options, include_blank: true %>
+  <%= f.label :hero6_id, "Hero 6" %>
+  <%= f.select :hero6_id, hero_options, include_blank: true %>
 </div>
 
 <div>

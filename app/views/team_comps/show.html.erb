@@ -1,41 +1,39 @@
 <h1><%= @team_comp.name %></h1>
 
-<ul>
-  <li><b>Author:</b> <%= @team_comp.author.name %></li>
-  <li><b>Objective:</b> <%= @team_comp.objective %></li>
-  <li><b>Rating:</b> <%= @team_comp.rating %></li>
-</ul>
+  <% if @team_comp.author == current_user %>
+    <p><%= link_to "Edit", edit_team_comp_path %></p>
+  <% end %>
 
-<h5>Heroes</h5>
-<ul>
-  <li>
-    <%= image_tag @team_comp.hero1.icon_path, size: "45x40" %>
-    <%= @team_comp.hero1.name %>
+  <b>Author:</b> <%= link_to @team_comp.author.username, @team_comp.author %><br><br>
+  <b>Objective:</b> <%= @team_comp.objective %><br><br>
+  <b>Rating:</b> <%= @team_comp.rating %><br>
+
+
+<h3>Heroes</h3>
+
     <%= image_tag "role-icons/#{@team_comp.hero1.role.downcase}-icon.png", size: "35x30" %>
-  </li>
-  <li>
-    <%= image_tag @team_comp.hero2.icon_path, size: "45x40" %>
-    <%= @team_comp.hero2.name %>
+    <%= link_to(image_tag(@team_comp.hero1.icon_path, size: "45x40"), @team_comp.hero1) %>
+    <%= link_to @team_comp.hero1.name, @team_comp.hero1 %><br>
+
     <%= image_tag "role-icons/#{@team_comp.hero2.role.downcase}-icon.png", size: "35x30" %>
-  </li>
-  <li>
-    <%= image_tag @team_comp.hero3.icon_path, size: "45x40" %>
-    <%= @team_comp.hero3.name %>
+    <%= link_to(image_tag(@team_comp.hero2.icon_path, size: "45x40"), @team_comp.hero2) %>
+    <%= link_to @team_comp.hero2.name, @team_comp.hero2 %><br>
+
     <%= image_tag "role-icons/#{@team_comp.hero3.role.downcase}-icon.png", size: "35x30" %>
-  </li>
-  <li>
-    <%= image_tag @team_comp.hero4.icon_path, size: "45x40" %>
-    <%= @team_comp.hero4.name %>
+    <%= link_to(image_tag(@team_comp.hero3.icon_path, size: "45x40"), @team_comp.hero3) %>
+    <%= link_to @team_comp.hero3.name, @team_comp.hero3 %><br>
+
     <%= image_tag "role-icons/#{@team_comp.hero4.role.downcase}-icon.png", size: "35x30" %>
-  </li>
-  <li>
-    <%= image_tag @team_comp.hero5.icon_path, size: "45x40" %>
-    <%= @team_comp.hero5.name %>
+    <%= link_to(image_tag(@team_comp.hero4.icon_path, size: "45x40"), @team_comp.hero4) %>
+    <%= link_to @team_comp.hero4.name, @team_comp.hero4 %><br>
+
     <%= image_tag "role-icons/#{@team_comp.hero5.role.downcase}-icon.png", size: "35x30" %>
-  </li>
-  <li>
-    <%= image_tag @team_comp.hero6.icon_path, size: "45x40" %>
-    <%= @team_comp.hero6.name %>
+    <%= link_to(image_tag(@team_comp.hero5.icon_path, size: "45x40"), @team_comp.hero5) %>
+    <%= link_to @team_comp.hero5.name, @team_comp.hero5 %><br>
+
     <%= image_tag "role-icons/#{@team_comp.hero6.role.downcase}-icon.png", size: "35x30" %>
-  </li>
-</ul>
+    <%= link_to(image_tag(@team_comp.hero6.icon_path, size: "45x40"), @team_comp.hero6) %>
+    <%= link_to @team_comp.hero6.name, @team_comp.hero6 %><br>
+
+<h3>Description</h3>
+<p><%= @team_comp.description %></p>
