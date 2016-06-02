@@ -1,4 +1,4 @@
-<h3>Weapon: <%= weapon.name %></h3>
+<h3><%= image_tag weapon.icon_path, width: "60"%> Weapon: <%= weapon.name %></h3>
 <ul>
   <li><b>Ammo:</b> <%= weapon.ammo ? weapon.ammo : "∞" %></li>
   <li><b>Fire-Rate:</b> <%= weapon.fire_rate %></li>
@@ -7,7 +7,11 @@
 <p><%= weapon.effect %></p>
 
 <% if weapon.alt_name %>
-  <h4>Alt-fire: <%= weapon.alt_name %></h4>
+  <% if weapon.alt_icon_path %>
+    <h4><%= image_tag weapon.alt_icon_path, width: "60" %> Alt-fire: <%= weapon.alt_name %></h4>
+  <% else %>
+    <h4>Alt-fire: <%= weapon.alt_name %></h4>
+  <% end %>
 
   <ul>
     <li><b>Fire-Rate:</b> <%= weapon.alt_fire_rate %></li>
