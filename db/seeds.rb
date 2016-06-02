@@ -128,7 +128,7 @@ Hero.create(name: "Pharah",
 #REAPER
 Weapon.create(name: "Hellfire Shotguns",
               hero_id: 4,
-              icon_path: "abilities-icons/offense/Ability-reaper1-hellfire-shotgun.png",
+              icon_path: "abilities-icons/offense/Ability-reaper1-hellfire-shotguns.png",
               ammo: 8,
               category: "Damage",
               fire_rate: "2 per second",
