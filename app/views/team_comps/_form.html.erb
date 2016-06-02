@@ -1,0 +1,54 @@
+<%= form_for @team_comp do |f| %>
+
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :objective %>
+  <%= f.select :objective, objective_options, include_blank: true %>
+</div>
+
+<div><p></p></div>
+
+<div>
+  <%= f.label :hero1, "Hero 1" %>
+  <%= f.select :hero1, hero_options, include_blank: true %>
+</div>
+
+<div>
+  <%= f.label :hero2, "Hero 2" %>
+  <%= f.select :hero2, hero_options, include_blank: true %>
+</div>
+
+<div>
+  <%= f.label :hero3, "Hero 3" %>
+  <%= f.select :hero3, hero_options, include_blank: true %>
+</div>
+
+<div>
+  <%= f.label :hero4, "Hero 4" %>
+  <%= f.select :hero4, hero_options, include_blank: true %>
+</div>
+
+<div>
+  <%= f.label :hero5, "Hero 5" %>
+  <%= f.select :hero5, hero_options, include_blank: true %>
+</div>
+
+<div>
+  <%= f.label :hero6, "Hero 6" %>
+  <%= f.select :hero6, hero_options, include_blank: true %>
+</div>
+
+<div>
+  <%= f.label :description %><br>
+  <%= f.text_area :description, size: "50x4" %>
+</div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+<% end %>

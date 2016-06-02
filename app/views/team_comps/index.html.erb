@@ -1,0 +1,10 @@
+<h1>Team Comps</h1>
+
+<%= link_to "New", new_team_comp_path %> -
+<%= link_to "Heroes", heroes_path %>
+
+<ul>
+  <% @team_comps.each do |comp| %>
+  <li><%= link_to comp.name, comp %></li>
+  <% end %>
+</ul>

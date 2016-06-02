@@ -1,0 +1,41 @@
+<h1><%= @team_comp.name %></h1>
+
+<ul>
+  <li><b>Author:</b> <%= @team_comp.author.name %></li>
+  <li><b>Objective:</b> <%= @team_comp.objective %></li>
+  <li><b>Rating:</b> <%= @team_comp.rating %></li>
+</ul>
+
+<h5>Heroes</h5>
+<ul>
+  <li>
+    <%= image_tag @team_comp.hero1.icon_path, size: "45x40" %>
+    <%= @team_comp.hero1.name %>
+    <%= image_tag "role-icons/#{@team_comp.hero1.role.downcase}-icon.png", size: "35x30" %>
+  </li>
+  <li>
+    <%= image_tag @team_comp.hero2.icon_path, size: "45x40" %>
+    <%= @team_comp.hero2.name %>
+    <%= image_tag "role-icons/#{@team_comp.hero2.role.downcase}-icon.png", size: "35x30" %>
+  </li>
+  <li>
+    <%= image_tag @team_comp.hero3.icon_path, size: "45x40" %>
+    <%= @team_comp.hero3.name %>
+    <%= image_tag "role-icons/#{@team_comp.hero3.role.downcase}-icon.png", size: "35x30" %>
+  </li>
+  <li>
+    <%= image_tag @team_comp.hero4.icon_path, size: "45x40" %>
+    <%= @team_comp.hero4.name %>
+    <%= image_tag "role-icons/#{@team_comp.hero4.role.downcase}-icon.png", size: "35x30" %>
+  </li>
+  <li>
+    <%= image_tag @team_comp.hero5.icon_path, size: "45x40" %>
+    <%= @team_comp.hero5.name %>
+    <%= image_tag "role-icons/#{@team_comp.hero5.role.downcase}-icon.png", size: "35x30" %>
+  </li>
+  <li>
+    <%= image_tag @team_comp.hero6.icon_path, size: "45x40" %>
+    <%= @team_comp.hero6.name %>
+    <%= image_tag "role-icons/#{@team_comp.hero6.role.downcase}-icon.png", size: "35x30" %>
+  </li>
+</ul>

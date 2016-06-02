@@ -1,0 +1,31 @@
+<h1><%= @hero.name %></h1>
+
+<ul>
+  <li><b>Role:</b> <%= image_tag "role-icons/#{@hero.role.downcase}-icon.png", size: "23x20"%>
+    <%= @hero.role %></li>
+  <li><b>Health:</b> <%= @hero.health %></li>
+  <% if @hero.armor %>
+    <li><b>Armor:</b> <%= @hero.armor %></li>
+  <% end %>
+  <% if @hero.shields %>
+    <li><b>Shields:</b> <%= @hero.shields %></li>
+  <% end %>
+</ul>
+
+<%= image_tag @hero.portrait_path, height: "800", align: "right" %>
+
+<%= render partial: "weapon", locals: {weapon: @hero.weapon1} %>
+<% if @hero.weapon2 %>
+  <%= render partial: "weapon", locals: {weapon: @hero.weapon2} %>
+<% end %>
+
+<%= render partial: "ability", locals: {ability: @hero.ability1} %>
+<% if @hero.ability2 %>
+  <%= render partial: "ability", locals: {ability: @hero.ability2} %>
+<% end %>
+
+<%= render partial: "ultimate", locals: {ultimate: @hero.ultimate} %>
+
+<% if @hero.passive %>
+  <%= render partial: "passive", locals: {passive: @hero.passive} %>
+<% end %>

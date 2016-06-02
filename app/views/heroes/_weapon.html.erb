@@ -1,0 +1,17 @@
+<h3>Weapon: <%= weapon.name %></h3>
+<ul>
+  <li><b>Ammo:</b> <%= weapon.ammo ? weapon.ammo : "∞" %></li>
+  <li><b>Fire-Rate:</b> <%= weapon.fire_rate %></li>
+</ul>
+
+<p><%= weapon.effect %></p>
+
+<% if weapon.alt_name %>
+  <h4>Alt-fire: <%= weapon.alt_name %></h4>
+
+  <ul>
+    <li><b>Fire-Rate:</b> <%= weapon.alt_fire_rate %></li>
+  </ul>
+
+  <p><%= weapon.alt_effect %></p>
+<% end %>
