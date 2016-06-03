@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20160603195831) do
     t.integer  "hero6_id",                null: false
     t.text     "objective"
     t.text     "description"
-    t.integer  "rating",      default: 1, null: false
+    t.integer  "rating",      default: 0, null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
