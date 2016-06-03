@@ -1,13 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  hero_id: 1
-  type: 
-  effect: MyText
-
-two:
-  name: MyString
-  hero_id: 1
-  type: 
-  effect: MyText
+dragonblade:
+  name: "Dragonblade"
+  hero: genji
+  category: "Damage"
+  effect: "Genji unsheaths his sword for 8 seconds, replacing his Shuriken with sword strikes that deal 120 damage in a wide arc for this time. He can deal 2 sword attacks every 1.83 seconds and gains a speed boost for the duration of the ability."
+  created_at: "2016-05-12 22:16:59"
+  updated_at: "2016-05-12 22:16:59"

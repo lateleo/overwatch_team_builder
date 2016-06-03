@@ -883,3 +883,21 @@ Hero.create(name: "Zenyatta",
             ability1_id: 40,
             ability2_id: 41,
             ultimate_id: 21)
+
+#USERS
+
+User.create(username: "artburtch", email: "art@burtch.com", password: "password", password_confirmation: "password")
+
+#COMPS
+100.times do |n|
+  TeamComp.create(name: "Test Comp ##{n}, Please Ignore",
+                  objective: "Assault, Attack",
+                  author_id: 1,
+                  hero1_id: 1,
+                  hero2_id: 1,
+                  hero3_id: 1,
+                  hero4_id: 1,
+                  hero5_id: 1,
+                  hero6_id: 1,
+                  description: "Seriously, this is a terrible idea.")
+end

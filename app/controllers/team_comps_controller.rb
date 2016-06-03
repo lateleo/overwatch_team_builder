@@ -1,6 +1,6 @@
 class TeamCompsController < ApplicationController
   def index
-    @team_comps = TeamComp.all
+    @team_comps = TeamComp.all.order(:rating).page(params[:page])
   end
 
   def show

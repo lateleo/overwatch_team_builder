@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602210349) do
+ActiveRecord::Schema.define(version: 20160602232536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,12 +68,12 @@ ActiveRecord::Schema.define(version: 20160602210349) do
   create_table "team_comps", force: :cascade do |t|
     t.string   "name"
     t.integer  "author_id"
-    t.integer  "hero1_id"
-    t.integer  "hero2_id"
-    t.integer  "hero3_id"
-    t.integer  "hero4_id"
-    t.integer  "hero5_id"
-    t.integer  "hero6_id"
+    t.integer  "hero1_id",    null: false
+    t.integer  "hero2_id",    null: false
+    t.integer  "hero3_id",    null: false
+    t.integer  "hero4_id",    null: false
+    t.integer  "hero5_id",    null: false
+    t.integer  "hero6_id",    null: false
     t.text     "objective"
     t.text     "description"
     t.integer  "rating"
