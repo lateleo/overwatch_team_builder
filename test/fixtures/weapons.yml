@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-shuriken:
-  name: "Shuriken"
-  hero: genji
-  icon_path: "abilities-icons/offense/Ability-genji1-shuriken.png"
-  ammo: 24
-  category: "Damage"
-  fire_rate: "3 per second"
-  effect: "Genji throws 3 deadly throwing stars in quick succession in a straight line, dealing 28 damage per shuriken. Capable of headshots."
-  alt_name: "Fan of Blades"
-  alt_category: "Damage"
-  alt_fire_rate: "3 per second"
-  alt_effect: "Genji throws 3 shuriken in a wider spread, dealing 28 damage per shuriken. Capable of headshots."
-  created_at: "2016-05-12 22:16:59"
-  updated_at: "2016-05-12 22:16:59"
+# shuriken:
+#   name: "Shuriken"
+#   hero: genji
+#   icon_path: "abilities-icons/offense/Ability-genji1-shuriken.png"
+#   ammo: 24
+#   category: "Damage"
+#   fire_rate: "3 per second"
+#   effect: "Genji throws 3 deadly throwing stars in quick succession in a straight line, dealing 28 damage per shuriken. Capable of headshots."
+#   alt_name: "Fan of Blades"
+#   alt_category: "Damage"
+#   alt_fire_rate: "3 per second"
+#   alt_effect: "Genji throws 3 shuriken in a wider spread, dealing 28 damage per shuriken. Capable of headshots."
+#   created_at: "2016-05-12 22:16:59"
+#   updated_at: "2016-05-12 22:16:59"

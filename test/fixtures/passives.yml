@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-cyber_agility:
-  name: "Cyber-Agility"
-  hero: genji
-  category: "Mobility"
-  effect: "Genji is able to climb up flat, vertical surfaces, as well as performing a double jump by pressing the jump button while already in the air."
-  created_at: "2016-05-12 22:16:59"
-  updated_at: "2016-05-12 22:16:59"
+# cyber_agility:
+#   name: "Cyber-Agility"
+#   hero: genji
+#   category: "Mobility"
+#   effect: "Genji is able to climb up flat, vertical surfaces, as well as performing a double jump by pressing the jump button while already in the air."
+#   created_at: "2016-05-12 22:16:59"
+#   updated_at: "2016-05-12 22:16:59"
