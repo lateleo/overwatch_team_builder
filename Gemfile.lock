@@ -96,6 +96,10 @@ GEM
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
     pg (0.18.4)
+    pg_search (1.0.6)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -178,6 +182,7 @@ DEPENDENCIES
   kaminari
   minitest-rg
   pg (~> 0.15)
+  pg_search
   pry
   rails (= 4.2.6)
   sass-rails (~> 5.0)

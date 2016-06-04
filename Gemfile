@@ -27,7 +27,11 @@ gem "sorcery"
 # used for debugging things
 gem "pry"
 
+# used for pagination
 gem "kaminari"
+
+# used for search functionality
+gem "pg_search"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

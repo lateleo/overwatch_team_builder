@@ -894,10 +894,67 @@ User.create(username: "artburtch", email: "art@burtch.com", password: "password"
                   objective: "Assault, Attack",
                   author_id: 1,
                   hero1_id: ((n)%21)+1,
-                  hero2_id: ((n)%21)+1,
-                  hero3_id: ((n)%21)+1,
-                  hero4_id: ((n)%21)+1,
-                  hero5_id: ((n)%21)+1,
+                  hero2_id: ((n+1)%21)+1,
+                  hero3_id: ((n+2)%21)+1,
+                  hero4_id: ((n+3)%21)+1,
+                  hero5_id: ((n+4)%21)+1,
                   hero6_id: ((n)%21)+1,
                   description: "Seriously, this is a terrible idea.")
 end
+
+
+# TeamComp.create(name: "Test Comp 1, Please Ignore",
+#                 objective: "Assault, Attack",
+#                 author_id: 1,
+#                 hero1_id: 2,
+#                 hero2_id: 2,
+#                 hero3_id: 3,
+#                 hero4_id: 3,
+#                 hero5_id: 3,
+#                 hero6_id: 3,
+#                 description: "Seriously, this is a terrible idea.")
+# #
+# TeamComp.create(name: "Test Comp 2, Please Ignore",
+#                 objective: "Assault, Attack",
+#                 author_id: 1,
+#                 hero1_id: 1,
+#                 hero2_id: 2,
+#                 hero3_id: 2,
+#                 hero4_id: 3,
+#                 hero5_id: 3,
+#                 hero6_id: 3,
+#                 description: "Seriously, this is a terrible idea.")
+# #
+# TeamComp.create(name: "Test Comp 3, Please Ignore",
+#                 objective: "Assault, Attack",
+#                 author_id: 1,
+#                 hero1_id: 1,
+#                 hero2_id: 1,
+#                 hero3_id: 2,
+#                 hero4_id: 2,
+#                 hero5_id: 3,
+#                 hero6_id: 3,
+#                 description: "Seriously, this is a terrible idea.")
+# #
+# TeamComp.create(name: "Test Comp 4, Please Ignore",
+#                 objective: "Assault, Attack",
+#                 author_id: 1,
+#                 hero1_id: 1,
+#                 hero2_id: 1,
+#                 hero3_id: 1,
+#                 hero4_id: 2,
+#                 hero5_id: 2,
+#                 hero6_id: 3,
+#                 description: "Seriously, this is a terrible idea.")
+# #
+# TeamComp.create(name: "Test Comp 5, Please Ignore",
+#                 objective: "Assault, Attack",
+#                 author_id: 1,
+#                 hero1_id: 1,
+#                 hero2_id: 1,
+#                 hero3_id: 1,
+#                 hero4_id: 1,
+#                 hero5_id: 2,
+#                 hero6_id: 2,
+#                 description: "Seriously, this is a terrible idea.")
+# #
