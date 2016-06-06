@@ -1,7 +1,12 @@
 <h1>Team Comps</h1>
 
+<%= form_tag team_comps_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <% if current_user %>
-  <%= link_to "New", new_team_comp_path %>
+  <p><%= link_to "New", new_team_comp_path %></p>
 <% end %>
 
 <table>

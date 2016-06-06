@@ -1,6 +1,10 @@
 class TeamCompsController < ApplicationController
   def index
-    @team_comps = TeamComp.all.page(params[:page])
+    if params[:search]
+      @team_comps = TeamComp.all.search_by_name(params[:search]).page(params[:page])
+    else
+      @team_comps = TeamComp.all.page(params[:page])
+    end
   end
 
   def show

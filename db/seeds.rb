@@ -1013,7 +1013,7 @@ TeamComp.create(name: "Test Comp 10, Please Ignore",
                 hero6_id: 3,
                 description: "Seriously, this is a terrible idea.")
 #
-TeamComp.create(name: "Test Comp 10, Please Ignore",
+TeamComp.create(name: "Test Comp 11, Please Ignore",
                 objective: "Assault, Attack",
                 author_id: 1,
                 hero1_id: 1,
