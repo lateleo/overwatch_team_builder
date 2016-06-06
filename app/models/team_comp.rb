@@ -2,13 +2,13 @@ require 'pry'
 class TeamComp < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search_by_name, :against => :name
-  pg_search_scope :search_hero_simple, :against => [:hero1_id, :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id]
-  pg_search_scope :search_hero_adv, lambda {|hero_id, query|
+  pg_search_scope :search_one_hero, :against => [:hero1_id, :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id]
+  pg_search_scope :search_hero_only, lambda {|hero_id, query|
     ids = [:hero1_id, :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id]
     raise ArgumentError unless ids.include?(hero_id)
     {against: hero_id, query: query}
   }
-  pg_search_scope :search_hero_exclude, lambda {|hero_id, query|
+  pg_search_scope :search_hero_except, lambda {|hero_id, query|
     ids = [:hero1_id, :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id]
     raise ArgumentError unless ids.include?(hero_id)
     excluded_ids = ids - [hero_id]
@@ -31,15 +31,6 @@ class TeamComp < ActiveRecord::Base
   belongs_to :hero5, class_name: "Hero"
   belongs_to :hero6, class_name: "Hero"
 
-  # def self.search_by_heroes(hero_1, *add_heroes)
-  #   if add_heroes.any?
-  #     heroes = [hero_1] + add_heroes
-  #     heroes.each do |hero|
-  #
-  #   else
-  #     search_hero_simple(hero_1)
-  #   end
-  # end
 
 
   def sort_hero_ids
