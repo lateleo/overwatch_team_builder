@@ -1,6 +1,7 @@
 require 'pry'
 class TeamComp < ActiveRecord::Base
   include PgSearch
+  acts_as_votable
 
   validates :name, presence: true
   validates :objective, presence: true
@@ -66,6 +67,10 @@ class TeamComp < ActiveRecord::Base
 
   def validate_hero_ids
     errors.add(:heroes, "can't be blank.") if hero_ids.any?{|hero_id| hero_id == nil}
+  end
+
+  def score
+  self.get_upvotes.size - self.get_downvotes.size
   end
 
 end

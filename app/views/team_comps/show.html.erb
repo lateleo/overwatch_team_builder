@@ -6,7 +6,10 @@
 
   <b>Author:</b> <%= link_to @team_comp.author.username, @team_comp.author %><br><br>
   <b>Objective:</b> <%= @team_comp.objective %><br><br>
-  <b>Rating:</b> <%= @team_comp.rating %><br>
+  <b>Rating:</b>
+    <%= link_to "^", like_team_comp_path(@team_comp), method: 'put', class: "upvote" %>
+    <%= @team_comp.score %>
+    <%= link_to "v", dislike_team_comp_path(@team_comp), method: 'put', class: "downvote" %><br>
 
 
 <h3>Heroes</h3>

@@ -21,7 +21,11 @@
           <%= link_to(image_tag(comp.hero5.icon_path, size: "35x30"), comp.hero5) %>
           <%= link_to(image_tag(comp.hero6.icon_path, size: "35x30"), comp.hero6) %>
         </td>
-        <td><%= comp.rating %></td>
+        <td>
+          <%= link_to "^", like_team_comp_path(comp), method: 'put', class: "upvote" %>
+          <%= comp.score %>
+          <%= link_to "v", dislike_team_comp_path(comp), method: 'put', class: "downvote" %>
+        </td>
         <td><%= link_to comp.author.username, comp.author %></td>
       </tr>
     <% end %>

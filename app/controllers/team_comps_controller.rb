@@ -54,6 +54,18 @@ class TeamCompsController < ApplicationController
     end
   end
 
+  def upvote
+    @team_comp = TeamComp.find(params[:id])
+    @team_comp.upvote_by current_user
+    redirect_back_or_to team_comps_path
+  end
+
+  def downvote
+    @team_comp = TeamComp.find(params[:id])
+    @team_comp.downvote_by current_user
+    redirect_back_or_to team_comps_path
+  end
+
   def destroy
     @team_comp = TeamComp.find(params['id'])
     @team_comp.destroy

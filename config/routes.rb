@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'links/upvote'
+
   get '/team_comps/search', to: 'team_comps#search', as: 'search'
   resources :team_comps
+  resources :team_comps do
+    member do
+      put "like", to: "team_comps#upvote"
+      put "dislike", to: "team_comps#downvote"
+    end
+  end
+
   resources :heroes, only: [:index, :show]
 
   root 'team_comps#index'
