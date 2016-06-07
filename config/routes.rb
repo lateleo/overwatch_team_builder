@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '/team_comps/search', to: 'team_comps#search', as: 'search'
   resources :team_comps
   resources :heroes, only: [:index, :show]
 
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new', as: 'login'
   get '/logout', to: 'sessions#destroy', as: 'logout'
-  get '/team_comps/search', to: 'team_comps#search', as: 'search'
 
 
 

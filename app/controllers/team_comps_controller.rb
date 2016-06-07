@@ -1,7 +1,17 @@
+require 'pry'
+
 class TeamCompsController < ApplicationController
   def index
     if params[:search]
       @team_comps = TeamComp.all.search_by_name(params[:search]).page(params[:page])
+    else
+      @team_comps = TeamComp.all.page(params[:page])
+    end
+  end
+
+  def search
+    if params[:name]
+      @team_comps = search_results
     else
       @team_comps = TeamComp.all.page(params[:page])
     end
@@ -55,5 +65,17 @@ class TeamCompsController < ApplicationController
   def team_comp_params
     params.require(:team_comp).permit(:name, :author_id, :objective, :hero1_id,
       :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id, :description)
+  end
+
+  def search_results
+    comps = TeamComp.all
+    heroes = [params[:hero1_id], params[:hero2_id], params[:hero3_id], params[:hero4_id], params[:hero5_id], params[:hero6_id]].map do |h_id|
+      h_id == "" ? nil : h_id.to_i
+    end
+    comps = comps.search_heroes(heroes) if heroes.any?
+    comps = comps.search_by_name(params[:name]) if params[:name] != ""
+    comps = comps.search_by_objective(params[:objective]) if params[:objective] != ""
+    comps = comps.search_by_description(params[:description]) if params[:description] != ""
+    Kaminari.paginate_array(comps).page(params[:page])
   end
 end

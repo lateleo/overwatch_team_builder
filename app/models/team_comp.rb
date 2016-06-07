@@ -19,23 +19,18 @@ class TeamComp < ActiveRecord::Base
   belongs_to :hero6, class_name: "Hero"
 
   pg_search_scope :search_by_name, :against => :name
-  pg_search_scope :search_hero_simple, :against => [:hero1_id, :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id]
-  pg_search_scope :search_hero_except, lambda {|hero_id, query|
-    ids = [:hero1_id, :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id]
-    raise ArgumentError unless ids.include?(hero_id)
-    excluded_ids = ids - [hero_id]
-    {against: excluded_ids, query: query}
-  }
+  pg_search_scope :search_by_objective, :against => :objective
+  pg_search_scope :search_by_description, :against => :description
 
   #This is the method that will run whenever a search is being performed where heroes are specified.
-  def self.search_heroes(*ids)
+  def self.search_heroes(ids)
     comps = all
     #sorts ids into ascending order numerically
-    ids.sort!
+    ids.compact!.sort!
     #creates a 2D array, where each element is of the form [hero_id, number of copies of the hero_id, starting point for the search]
     sorted_ids = ids.uniq.map { |hero_id| [hero_id, ids.count(hero_id), ids.index(hero_id)] }
     #gradually filters comps using the self.search_hero method, doing so once for every unique hero_id given.
-    sorted_ids.each { |sorted_id| comps = search_hero(comps, sorted_id, ids.length) }
+    sorted_ids.each { |sorted_id| comps = comps.select {|comp| search_hero(comps, sorted_id, ids.length).include?(comp)} }
     comps
   end
 
@@ -54,9 +49,6 @@ class TeamComp < ActiveRecord::Base
     end
     sorted_comps.uniq
   end
-
-
-
 
 
   def sort_hero_ids
