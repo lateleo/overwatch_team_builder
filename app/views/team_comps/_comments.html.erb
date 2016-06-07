@@ -1,0 +1,9 @@
+<% @team_comp.comments.each do |comment| %>
+  <p>
+    <span class="upvote">^</span>
+    <%= comment.rating %>
+    <span class="downvote">v</span>
+    <b><%= link_to(comment.author.username, comment.author) %></b>
+  </p>
+  <p><%= comment.content %></p>
+<% end %>
