@@ -3,9 +3,9 @@ require 'pry'
 class TeamCompsController < ApplicationController
   def index
     if params[:search]
-      @team_comps = TeamComp.all.search_by_name(params[:search]).page(params[:page])
+      @team_comps = TeamComp.all.search_by_name(params[:search]).order(rating: :desc, name: :asc).page(params[:page])
     else
-      @team_comps = TeamComp.all.page(params[:page])
+      @team_comps = TeamComp.all.order(rating: :desc, name: :asc).page(params[:page])
     end
   end
 
@@ -57,12 +57,14 @@ class TeamCompsController < ApplicationController
   def upvote
     @team_comp = TeamComp.find(params[:id])
     @team_comp.upvote_by current_user
+    @team_comp.update_attributes(rating: @team_comp.score)
     redirect_back_or_to team_comps_path
   end
 
   def downvote
     @team_comp = TeamComp.find(params[:id])
     @team_comp.downvote_by current_user
+    @team_comp.update_attributes(rating: @team_comp.score)
     redirect_back_or_to team_comps_path
   end
 

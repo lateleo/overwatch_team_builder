@@ -8,7 +8,7 @@
   <b>Objective:</b> <%= @team_comp.objective %><br><br>
   <b>Rating:</b>
     <%= link_to "^", like_team_comp_path(@team_comp), method: 'put', class: "upvote" %>
-    <%= @team_comp.score %>
+    <%= @team_comp.rating %>
     <%= link_to "v", dislike_team_comp_path(@team_comp), method: 'put', class: "downvote" %><br>
 
 

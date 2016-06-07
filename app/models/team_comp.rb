@@ -10,6 +10,7 @@ class TeamComp < ActiveRecord::Base
   validate :validate_hero_ids
   after_validation :sort_hero_ids
 
+
   has_many :comments
   belongs_to :author, class_name: "User"
   belongs_to :hero1, class_name: "Hero"
@@ -69,8 +70,12 @@ class TeamComp < ActiveRecord::Base
     errors.add(:heroes, "can't be blank.") if hero_ids.any?{|hero_id| hero_id == nil}
   end
 
+  def update_rating
+    rating = score
+  end
+
   def score
-  self.get_upvotes.size - self.get_downvotes.size
+    get_upvotes.size - get_downvotes.size
   end
 
 end

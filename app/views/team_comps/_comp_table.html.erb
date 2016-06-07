@@ -23,7 +23,7 @@
         </td>
         <td>
           <%= link_to "^", like_team_comp_path(comp), method: 'put', class: "upvote" %>
-          <%= comp.score %>
+          <%= comp.rating %>
           <%= link_to "v", dislike_team_comp_path(comp), method: 'put', class: "downvote" %>
         </td>
         <td><%= link_to comp.author.username, comp.author %></td>
