@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   get '/team_comps/search', to: 'team_comps#search', as: 'search'
   resources :team_comps
   resources :team_comps do
+    resources :comments, only: [:create, :destroy]
+    resources :comments do
+      member do
+        put "like", to: "comments#upvote"
+        put "dislike", to: "comments#downvote"
+      end
+    end
     member do
       put "like", to: "team_comps#upvote"
       put "dislike", to: "team_comps#downvote"

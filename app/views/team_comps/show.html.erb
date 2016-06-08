@@ -42,3 +42,16 @@
 <p><%= @team_comp.description %></p>
 
 <h2>Comments</h2>
+
+<% if current_user %>
+  <%= form_for [@team_comp, @comment] do |f| %>
+
+  <%= f.label :content, "New Comment" %><br>
+  <%= f.text_area :content, size: "50x4" %><br>
+
+  <%= f.submit %>
+
+  <% end %>
+<% end %>
+
+<%= render 'comments' %>

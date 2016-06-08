@@ -1,9 +1,12 @@
-<% @team_comp.comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <p>
-    <span class="upvote">^</span>
+    <%= link_to "^", like_team_comp_comment_path(@team_comp.id, comment), method: 'put', class: "upvote" %>
     <%= comment.rating %>
-    <span class="downvote">v</span>
-    <b><%= link_to(comment.author.username, comment.author) %></b>
-  </p>
-  <p><%= comment.content %></p>
+    <%= link_to "v", dislike_team_comp_comment_path(@team_comp.id, comment), method: 'put', class: "downvote" %>
+    <b><%= link_to(comment.author.username, comment.author) %>:</b>
+  <%= comment.content %></p>
 <% end %>
+
+<div>
+<%= paginate @comments %>
+</div>

@@ -19,6 +19,8 @@ class TeamCompsController < ApplicationController
 
   def show
     @team_comp = TeamComp.find(params['id'])
+    @comments = @team_comp.comments.order(rating: :desc, updated_at: :desc).page(params[:page])
+    @comment = Comment.new(author_id: current_user.id, team_comp_id: params['id']) if current_user
   end
 
   def new
@@ -71,7 +73,7 @@ class TeamCompsController < ApplicationController
   def destroy
     @team_comp = TeamComp.find(params['id'])
     @team_comp.destroy
-    redirect_to :abilities, notice: "Team Comp successfully destroyed."
+    redirect_to :team_comps, notice: "Team Comp successfully destroyed."
   end
 
   private
