@@ -4,50 +4,50 @@
 
 <div>
   <%= label_tag :name, "Name" %>
-  <%= text_field_tag :name %>
+  <%= text_field_tag :name, params['name'] %>
 </div>
 
 <div><p></p></div>
 <div>
   <%= label_tag :objective %>
-  <%= select_tag :objective, options_for_select(objective_options), include_blank: true %>
+  <%= select_tag :objective, options_for_select(objective_options, params['objective']), include_blank: true %>
 </div>
 
 <div><p></p></div>
 
 <div>
   <%= label_tag :hero1_id, "Hero 1" %>
-  <%= select_tag :hero1_id, options_for_select(hero_options), include_blank: true %>
+  <%= select_tag :hero1_id, options_for_select(hero_options, params['hero1_id']), include_blank: true %>
 </div>
 
 <div>
   <%= label_tag :hero2_id, "Hero 2" %>
-  <%= select_tag :hero2_id, options_for_select(hero_options), include_blank: true %>
+  <%= select_tag :hero2_id, options_for_select(hero_options, params['hero2_id']), include_blank: true %>
 </div>
 
 <div>
   <%= label_tag :hero3_id, "Hero 3" %>
-  <%= select_tag :hero3_id, options_for_select(hero_options), include_blank: true %>
+  <%= select_tag :hero3_id, options_for_select(hero_options, params['hero3_id']), include_blank: true %>
 </div>
 
 <div>
   <%= label_tag :hero4_id, "Hero 4" %>
-  <%= select_tag :hero4_id, options_for_select(hero_options), include_blank: true %>
+  <%= select_tag :hero4_id, options_for_select(hero_options, params['hero4_id']), include_blank: true %>
 </div>
 
 <div>
   <%= label_tag :hero5_id, "Hero 5" %>
-  <%= select_tag :hero5_id, options_for_select(hero_options), include_blank: true %>
+  <%= select_tag :hero5_id, options_for_select(hero_options, params['hero5_id']), include_blank: true %>
 </div>
 
 <div>
   <%= label_tag :hero6_id, "Hero 6" %>
-  <%= select_tag :hero6_id, options_for_select(hero_options), include_blank: true %>
+  <%= select_tag :hero6_id, options_for_select(hero_options, params['hero6_id']), include_blank: true %>
 </div>
 
 <div>
   <br><%= label_tag :description %><br>
-  <%= text_area_tag :description, nil, size: "50x4" %>
+  <%= text_area_tag :description, params['description'], size: "50x4" %>
 </div>
 
 <div>
