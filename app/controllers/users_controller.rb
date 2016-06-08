@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params['id'])
+    @team_comps = TeamComp.where(author_id: @user.id).order(rating: :desc, updated_at: :desc).page(params[:page])
   end
 
   def edit

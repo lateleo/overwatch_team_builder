@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Objective</th>
+      <th>Lineup</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @team_comps.each do |comp| %>
+      <tr>
+        <td><%= link_to comp.name, comp %></td>
+        <td><%= comp.objective %></td>
+        <td>
+          <%= link_to(image_tag(comp.hero1.icon_path, size: "35x35"), comp.hero1) %>
+          <%= link_to(image_tag(comp.hero2.icon_path, size: "35x35"), comp.hero2) %>
+          <%= link_to(image_tag(comp.hero3.icon_path, size: "35x35"), comp.hero3) %>
+          <%= link_to(image_tag(comp.hero4.icon_path, size: "35x35"), comp.hero4) %>
+          <%= link_to(image_tag(comp.hero5.icon_path, size: "35x35"), comp.hero5) %>
+          <%= link_to(image_tag(comp.hero6.icon_path, size: "35x35"), comp.hero6) %>
+        </td>
+        <td>
+          <%= comp.rating %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+<%= paginate @team_comps %>
+</div>
