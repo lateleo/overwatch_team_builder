@@ -55,9 +55,13 @@
 </div>
 <% end %>
 
-<% if @team_comps %>
-  <h2>Results</h2>
+<h2>Results</h2>
+<% if @team_comps.any? %>
 
   <%= render 'comp_table' %>
+
+<% else %>
+
+  No matching team comps were found.
 
 <% end %>

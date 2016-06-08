@@ -88,10 +88,10 @@ class TeamCompsController < ApplicationController
     heroes = [params[:hero1_id], params[:hero2_id], params[:hero3_id], params[:hero4_id], params[:hero5_id], params[:hero6_id]].map do |h_id|
       h_id == "" ? nil : h_id.to_i
     end
-    comps = comps.search_heroes(heroes) if heroes.any?
     comps = comps.search_by_name(params[:name]) if params[:name] != ""
     comps = comps.search_by_objective(params[:objective]) if params[:objective] != ""
     comps = comps.search_by_description(params[:description]) if params[:description] != ""
+    comps = comps.search_heroes(heroes) if heroes.any?
     Kaminari.paginate_array(comps).page(params[:page])
   end
 end
