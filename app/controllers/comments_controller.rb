@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.upvote_by current_user
     @comment.update_attributes(rating: @comment.score)
-    redirect_to @team_comp
+    redirect_to :back
   end
 
   def downvote
@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.downvote_by current_user
     @comment.update_attributes(rating: @comment.score)
-    redirect_to @team_comp
+    redirect_to :back
   end
 
   def create

@@ -4,6 +4,8 @@
 <%= link_to "Edit", edit_user_path %>
 <% end %>
 
-<h3>Team Comps</h3>
+<% if @team_comps.any? %>
+  <h3>Team Comps</h3>
 
-<%= render 'comp_table' %>
+  <%= render 'comp_table' %>
+<% end %>

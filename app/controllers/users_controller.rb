@@ -2,15 +2,14 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
-    redirect_back_or_to(show_user_path(current_user.id)) if current_user
+    redirect_to(current_user) if current_user
     @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      login(params[:email], params[:password])
-      redirect_back_or_to(@user, notice: "User saved.")
+      redirect_to(:back, notice: "User saved.")
     else
       render :new
     end

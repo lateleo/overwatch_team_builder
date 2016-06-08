@@ -60,14 +60,14 @@ class TeamCompsController < ApplicationController
     @team_comp = TeamComp.find(params[:id])
     @team_comp.upvote_by current_user
     @team_comp.update_attributes(rating: @team_comp.score)
-    redirect_back_or_to(team_comps_path)
+    redirect_to(:back)
   end
 
   def downvote
     @team_comp = TeamComp.find(params[:id])
     @team_comp.downvote_by current_user
     @team_comp.update_attributes(rating: @team_comp.score)
-    redirect_back_or_to(team_comps_path)
+    redirect_to(:back)
   end
 
   def destroy
