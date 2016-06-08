@@ -1,7 +1,7 @@
 <h1>Team Comps</h1>
 
 <%= form_tag team_comps_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search] %>
+  <%= text_field_tag :search, params[:search], placeholder: 'Search by Name' %>
   <%= submit_tag "Search" %>
 <% end %>
 <p><%= link_to "Advanced Search", search_path %></p>
