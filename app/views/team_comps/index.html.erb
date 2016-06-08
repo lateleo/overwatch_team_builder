@@ -1,6 +1,6 @@
 <h1>Team Comps</h1>
 
-<%= form_tag team_comps_path, :method => 'get' do %>
+<%= form_tag search_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search], placeholder: 'Search by Name' %>
   <%= submit_tag "Search" %>
 <% end %>
@@ -10,4 +10,10 @@
   <p><%= link_to "New", new_team_comp_path %></p>
 <% end %>
 
+<%= form_tag team_comps_path, :method => 'get' do %>
+  <%= label_tag :sort_method, "Sort By" %>
+  <%= select_tag :sort_method, options_for_select(['first']) %>
+
+  <%= submit_tag "Sort" %>
+<% end %>
 <%= render 'comp_table' %>

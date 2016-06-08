@@ -2,11 +2,8 @@ require 'pry'
 
 class TeamCompsController < ApplicationController
   def index
-    if params[:search]
-      @team_comps = TeamComp.all.search_by_name(params[:search]).order(rating: :desc, name: :asc).page(params[:page])
-    else
-      @team_comps = TeamComp.all.order(rating: :desc, name: :asc).page(params[:page])
-    end
+    comps_array = TeamComp.all.sort_by {|comp| comp.score}.reverse
+    @team_comps = Kaminari.paginate_array(comps_array).page(params[:page])
   end
 
   def search
@@ -59,14 +56,14 @@ class TeamCompsController < ApplicationController
   def upvote
     @team_comp = TeamComp.find(params[:id])
     @team_comp.upvote_by current_user
-    @team_comp.update_attributes(rating: @team_comp.score)
+    # @team_comp.update_attributes(rating: @team_comp.score)
     redirect_to(:back)
   end
 
   def downvote
     @team_comp = TeamComp.find(params[:id])
     @team_comp.downvote_by current_user
-    @team_comp.update_attributes(rating: @team_comp.score)
+    # @team_comp.update_attributes(rating: @team_comp.score)
     redirect_to(:back)
   end
 
@@ -93,5 +90,14 @@ class TeamCompsController < ApplicationController
     comps = comps.search_by_strategy(params[:strategy]) if params[:strategy] != ""
     comps = comps.search_heroes(heroes) if heroes.any?
     Kaminari.paginate_array(comps).page(params[:page])
+  end
+
+  def sort_method
+    sort_methods = {"Rating: High-Low" => {rating: :desc, updated_at: :desc},
+      "Rating: Low-High" => {rating: :asc, updated_at: :desc},
+      "Name: A-Z" =>{name: :desc, updated_at: :desc},
+      "Name: Z-A" => {name: :asc, updated_at: :desc},
+      "Updated: Newest first" => {updated_at: :desc, rating: :desc},
+      "Updated: Oldest first" => {updated_at: :asc, rating: :desc}}
   end
 end
