@@ -5,6 +5,7 @@
       <th>Objective</th>
       <th>Lineup</th>
       <th>Rating</th>
+      <th>Strategy</th>
     </tr>
   </thead>
   <tbody>
@@ -23,6 +24,7 @@
         <td>
           <%= comp.rating %>
         </td>
+        <td><%= comp.strategy.truncate(50) %></td>
       </tr>
     <% end %>
   </tbody>

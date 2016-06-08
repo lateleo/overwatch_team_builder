@@ -5,7 +5,7 @@ class TeamComp < ActiveRecord::Base
 
   validates :name, presence: true
   validates :objective, presence: true
-  validates :description, presence: true
+  validates :strategy, presence: true
   validates :author, presence: true
   validate :validate_hero_ids
   after_validation :sort_hero_ids
@@ -22,7 +22,7 @@ class TeamComp < ActiveRecord::Base
 
   pg_search_scope :search_by_name, :against => :name
   pg_search_scope :search_by_objective, :against => :objective
-  pg_search_scope :search_by_description, :against => :description
+  pg_search_scope :search_by_strategy, :against => :strategy
 
   #This is the method that will run whenever a search is being performed where heroes are specified.
   def self.search_heroes(ids)

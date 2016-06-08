@@ -80,7 +80,7 @@ class TeamCompsController < ApplicationController
 
   def team_comp_params
     params.require(:team_comp).permit(:name, :author_id, :objective, :hero1_id,
-      :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id, :description)
+      :hero2_id, :hero3_id, :hero4_id, :hero5_id, :hero6_id, :strategy)
   end
 
   def search_results
@@ -90,7 +90,7 @@ class TeamCompsController < ApplicationController
     end
     comps = comps.search_by_name(params[:name]) if params[:name] != ""
     comps = comps.search_by_objective(params[:objective]) if params[:objective] != ""
-    comps = comps.search_by_description(params[:description]) if params[:description] != ""
+    comps = comps.search_by_strategy(params[:strategy]) if params[:strategy] != ""
     comps = comps.search_heroes(heroes) if heroes.any?
     Kaminari.paginate_array(comps).page(params[:page])
   end

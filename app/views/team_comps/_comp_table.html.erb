@@ -6,6 +6,7 @@
       <th>Lineup</th>
       <th>Rating</th>
       <th>Author</th>
+      <th>Strategy</th>
     </tr>
   </thead>
   <tbody>
@@ -27,6 +28,7 @@
           <%= link_to "v", dislike_team_comp_path(comp), method: 'put', class: "downvote" %>
         </td>
         <td><%= link_to comp.author.username, comp.author %></td>
+        <td><%= comp.strategy.truncate(50) %></td>
       </tr>
     <% end %>
   </tbody>
