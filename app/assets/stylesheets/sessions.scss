@@ -25,3 +25,7 @@ a {
 .downvote {
   color: $downvote-red;
 }
+
+textarea, input {
+  color: $background-color;
+}
