@@ -13,7 +13,8 @@ class TeamCompsController < ApplicationController
 
   def show
     @team_comp = TeamComp.find(params[:id])
-    @comments = @team_comp.comments.order(rating: :desc, updated_at: :desc).page(params[:page])
+    comments = (params[:sort_method] ? sorted_comments(params[:sort_method], @team_comp) : sorted_comments("Rating: High-Low", @team_comp))
+    @comments = Kaminari.paginate_array(comments).page(params[:page])
     @comment = Comment.new(author_id: current_user.id, team_comp_id: params[:id]) if current_user
   end
 
@@ -44,7 +45,7 @@ class TeamCompsController < ApplicationController
     @team_comp = TeamComp.find(params[:id])
 
     if @team_comp.update_attributes(team_comp_params)
-      redirect_to @team_comp, notice: "Team Comp successfully created."
+      redirect_to @team_comp, notice: "Team Comp successfully updated."
     else
       render :edit
     end
@@ -96,5 +97,17 @@ class TeamCompsController < ApplicationController
       "Updated: Oldest first" => [:updated_integer, :neg_score, false]}
     comps = TeamComp.all.sort_by {|comp| [0,1].map {|i| comp.send(sort_options[sort_method][i])}}
     comps.reverse! if sort_options[sort_method][2]
+  end
+
+  def sorted_comments(sort_method, comp)
+    sort_options = {
+      "Rating: High-Low" => [:score, :updated_integer, true],
+      "Rating: Low-High" => [:neg_score, :updated_integer, true],
+      "Name: A-Z" => [:name, :neg_updated_integer, false],
+      "Name: Z-A" => [:name, :neg_updated_integer, true],
+      "Updated: Newest first" => [:updated_integer, :score, true],
+      "Updated: Oldest first" => [:updated_integer, :neg_score, false]}
+    comments = comp.comments.sort_by {|comment| [0,1].map {|i| comment.send(sort_options[sort_method][i])}}
+    comments.reverse! if sort_options[sort_method][2]
   end
 end

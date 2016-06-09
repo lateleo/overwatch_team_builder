@@ -21,11 +21,8 @@ class CommentsController < ApplicationController
     @comment.author = current_user
     @comment.team_comp = @team_comp
 
-    if @comment.save
-      redirect_to @team_comp, notice: "Team Comp successfully created."
-    else
-      redirect_to @team_comp
-    end
+    @comment.save
+    redirect_to @team_comp
   end
 
   def destroy

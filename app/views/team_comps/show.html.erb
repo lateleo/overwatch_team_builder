@@ -54,4 +54,16 @@
   <% end %>
 <% end %>
 
+<% if @comments.any? %>
+<p></p>
+  <%= form_tag @team_comp, :method => 'get' do %>
+    <%= label_tag :sort_method, "Sort By" %>
+    <% selected = (params[:sort_method] ? params[:sort_method] : "Rating: High-Low") %>
+    <%= select_tag :sort_method, options_for_select(["Rating: High-Low", "Rating: Low-High", "Name: A-Z", "Name: Z-A", "Updated: Newest first", "Updated: Oldest first"], selected) %>
+
+    <%= submit_tag "Sort" %>
+  <% end %>
+  <p></p>
+<% end %>
+
 <%= render 'comments' %>

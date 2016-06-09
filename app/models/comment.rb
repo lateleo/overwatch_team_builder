@@ -11,4 +11,16 @@ class Comment < ActiveRecord::Base
   def score
     get_upvotes.size - get_downvotes.size
   end
+
+  def neg_score
+    0-score
+  end
+
+  def updated_integer
+    updated_at.to_i
+  end
+
+  def neg_updated_integer
+    0-updated_integer
+  end
 end
