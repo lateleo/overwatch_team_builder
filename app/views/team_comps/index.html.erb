@@ -2,7 +2,7 @@
 
 <%= form_tag search_path, :method => 'get' do %>
   <%= text_field_tag :name, params[:name], placeholder: 'Search by Name' %>
-  <%= submit_tag "Search" %>
+  <%= submit_tag "Search", class: "btn btn-default btn-xs" %>
 <% end %>
 <p><%= link_to "Advanced Search", search_path %></p>
 
@@ -15,6 +15,6 @@
   <% selected = (params[:sort_method] ? params[:sort_method] : "Rating: High-Low") %>
   <%= select_tag :sort_method, options_for_select(["Rating: High-Low", "Rating: Low-High", "Name: A-Z", "Name: Z-A", "Updated: Newest first", "Updated: Oldest first"], selected) %>
 
-  <%= submit_tag "Sort" %>
+  <%= submit_tag "Sort", class: "btn btn-default btn-xs" %>
 <% end %>
 <%= render 'comp_table' %>

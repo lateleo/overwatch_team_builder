@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+  <div class="text-right">
   <% if current_user %>
     <p>Logged in as <%= link_to current_user.username, current_user %> -
     <%= link_to "Logout", logout_path %></p>
@@ -14,12 +16,13 @@
     <p>Not logged in. <%= link_to "Log In", login_path %> -
     <%= link_to "Sign Up", new_user_path %></p>
   <% end %>
+  </div>
 
 <%= link_to "Home", root_path %> -
 <%= link_to "Heroes", heroes_path %> -
 <%= link_to "Back", :back %>
 
 <%= yield %>
-
+</div>
 </body>
 </html>

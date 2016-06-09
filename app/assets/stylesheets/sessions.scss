@@ -2,20 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html {
-  background-color: #131419;
-  color: #FFFFFF;
+$background-color: #131419;
+$white: #ffffff;
+$link-blue: #00c3ff;
+$upvote-green: #25e825;
+$downvote-red: #eb3434;
+
+html, body {
+  background-color: $background-color;
+  color: $white;
   font-family: sans-serif;
 }
 
 a {
-  color: #00C3FF;
+  color: $link-blue;
 }
 
 .upvote {
-  color: #25E825;
+  color: $upvote-green;
 }
 
 .downvote {
-  color: #EB3434;
+  color: $downvote-red;
 }
