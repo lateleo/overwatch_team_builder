@@ -1,21 +1,41 @@
 <h1>Heroes</h1>
 
 <h3><%= image_tag "role-icons/offense-icon.png", size: "35x35"%>Offense</h3>
-<% @offense.each do |hero| %>
-  <%= link_to(image_tag(hero.icon_path, size: "50x50"), hero) %>
-<% end %>
+<div class="row">
+  <% @offense.each do |hero| %>
+    <div class="col-sm-1 text-center">
+      <%= link_to(image_tag(hero.icon_path, size: "75x75"), hero) %>
+      <%= link_to hero.name, hero %>
+    </div>
+  <% end %>
+</div>
 
 <h3><%= image_tag "role-icons/defense-icon.png", size: "35x35"%>Defense</h3>
-<% @defense.each do |hero| %>
-  <%= link_to(image_tag(hero.icon_path, size: "50x50"), hero) %>
-<% end %>
+<div class="row">
+  <% @defense.each do |hero| %>
+    <div class="col-sm-1 text-center">
+      <%= link_to(image_tag(hero.icon_path, size: "75x75"), hero) %>
+      <%= link_to hero.name, hero %>
+    </div>
+  <% end %>
+</div>
 
 <h3><%= image_tag "role-icons/tank-icon.png", size: "35x35"%>Tank</h3>
-<% @tank.each do |hero| %>
-  <%= link_to(image_tag(hero.icon_path, size: "50x50"), hero) %>
-<% end %>
+<div class="row">
+  <% @tank.each do |hero| %>
+    <div class="col-sm-1 text-center">
+      <%= link_to(image_tag(hero.icon_path, size: "75x75"), hero) %>
+      <%= link_to hero.name, hero %>
+    </div>
+  <% end %>
+</div>
 
 <h3><%= image_tag "role-icons/support-icon.png", size: "35x35"%>Support</h3>
-<% @support.each do |hero| %>
-  <%= link_to(image_tag(hero.icon_path, size: "50x50"), hero) %>
-<% end %>
+<div class="row">
+  <% @support.each do |hero| %>
+    <div class="col-sm-1 text-center">
+      <%= link_to(image_tag(hero.icon_path, size: "75x75"), hero) %>
+      <%= link_to hero.name, hero %>
+    </div>
+  <% end %>
+</div>

@@ -57,12 +57,14 @@
 </div>
 
 <div>
-  <br><%= submit_tag "Search", class: "btn btn-default btn-xs" %>
+  <br><%= submit_tag "Search", class: "btn btn-default" %>
 </div>
 <% end %>
 
 <h2>Results</h2>
 <% if @team_comps.any? %>
+
+  <%= paginate @team_comps %>
 
   <%= render 'comp_table' %>
 
