@@ -70,12 +70,20 @@ class TeamComp < ActiveRecord::Base
     errors.add(:heroes, "can't be blank.") if hero_ids.any?{|hero_id| hero_id == nil}
   end
 
-  def update_rating
-    rating = score
-  end
-
   def score
     get_upvotes.size - get_downvotes.size
+  end
+
+  def neg_score
+    0-score
+  end
+
+  def updated_integer
+    updated_at.to_i
+  end
+
+  def neg_updated_integer
+    0-updated_integer
   end
 
 end

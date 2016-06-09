@@ -2,22 +2,19 @@ require 'pry'
 
 class TeamCompsController < ApplicationController
   def index
-    comps_array = TeamComp.all.sort_by {|comp| comp.score}.reverse
-    @team_comps = Kaminari.paginate_array(comps_array).page(params[:page])
+    comps = (params[:sort_method] ? sorted_comps(params[:sort_method]) : sorted_comps("Rating: High-Low"))
+    @team_comps = Kaminari.paginate_array(comps).page(params[:page])
   end
 
   def search
-    if params[:name]
-      @team_comps = search_results
-    else
-      @team_comps = TeamComp.all.page(params[:page])
-    end
+    comps = (params[:name] ? search_results : comps = sorted_comps("Rating: High-Low"))
+    @team_comps = Kaminari.paginate_array(comps).page(params[:page])
   end
 
   def show
-    @team_comp = TeamComp.find(params['id'])
+    @team_comp = TeamComp.find(params[:id])
     @comments = @team_comp.comments.order(rating: :desc, updated_at: :desc).page(params[:page])
-    @comment = Comment.new(author_id: current_user.id, team_comp_id: params['id']) if current_user
+    @comment = Comment.new(author_id: current_user.id, team_comp_id: params[:id]) if current_user
   end
 
   def new
@@ -40,11 +37,11 @@ class TeamCompsController < ApplicationController
   end
 
   def edit
-    @team_comp = TeamComp.find(params['id'])
+    @team_comp = TeamComp.find(params[:id])
   end
 
   def update
-    @team_comp = TeamComp.find(params['id'])
+    @team_comp = TeamComp.find(params[:id])
 
     if @team_comp.update_attributes(team_comp_params)
       redirect_to @team_comp, notice: "Team Comp successfully created."
@@ -56,19 +53,17 @@ class TeamCompsController < ApplicationController
   def upvote
     @team_comp = TeamComp.find(params[:id])
     @team_comp.upvote_by current_user
-    # @team_comp.update_attributes(rating: @team_comp.score)
     redirect_to(:back)
   end
 
   def downvote
     @team_comp = TeamComp.find(params[:id])
     @team_comp.downvote_by current_user
-    # @team_comp.update_attributes(rating: @team_comp.score)
     redirect_to(:back)
   end
 
   def destroy
-    @team_comp = TeamComp.find(params['id'])
+    @team_comp = TeamComp.find(params[:id])
     @team_comp.destroy
     redirect_to :team_comps, notice: "Team Comp successfully destroyed."
   end
@@ -81,7 +76,7 @@ class TeamCompsController < ApplicationController
   end
 
   def search_results
-    comps = TeamComp.all
+    comps = sorted_comps(params[:sort_method])
     heroes = [params[:hero1_id], params[:hero2_id], params[:hero3_id], params[:hero4_id], params[:hero5_id], params[:hero6_id]].map do |h_id|
       h_id == "" ? nil : h_id.to_i
     end
@@ -89,15 +84,17 @@ class TeamCompsController < ApplicationController
     comps = comps.search_by_objective(params[:objective]) if params[:objective] != ""
     comps = comps.search_by_strategy(params[:strategy]) if params[:strategy] != ""
     comps = comps.search_heroes(heroes) if heroes.any?
-    Kaminari.paginate_array(comps).page(params[:page])
   end
 
-  def sort_method
-    sort_methods = {"Rating: High-Low" => {rating: :desc, updated_at: :desc},
-      "Rating: Low-High" => {rating: :asc, updated_at: :desc},
-      "Name: A-Z" =>{name: :desc, updated_at: :desc},
-      "Name: Z-A" => {name: :asc, updated_at: :desc},
-      "Updated: Newest first" => {updated_at: :desc, rating: :desc},
-      "Updated: Oldest first" => {updated_at: :asc, rating: :desc}}
+  def sorted_comps(sort_method)
+    sort_options = {
+      "Rating: High-Low" => [:score, :updated_integer, true],
+      "Rating: Low-High" => [:neg_score, :updated_integer, true],
+      "Name: A-Z" => [:name, :neg_updated_integer, false],
+      "Name: Z-A" => [:name, :neg_updated_integer, true],
+      "Updated: Newest first" => [:updated_integer, :score, true],
+      "Updated: Oldest first" => [:updated_integer, :neg_score, false]}
+    comps = TeamComp.all.sort_by {|comp| [0,1].map {|i| comp.send(sort_options[sort_method][i])}}
+    comps.reverse! if sort_options[sort_method][2]
   end
 end

@@ -899,7 +899,7 @@ User.create(username: "artburtch", email: "art@burtch.com", password: "password"
                   hero4_id: ((n+3)%21)+1,
                   hero5_id: ((n+4)%21)+1,
                   hero6_id: ((n+5)%21)+1,
-                  description: "Seriously, this is a terrible idea.")
+                  strategy: "Seriously, this is a terrible idea.")
 end
 
 21.times do |n|
@@ -912,7 +912,7 @@ end
                   hero4_id: ((n+3)%21)+1,
                   hero5_id: ((n+4)%21)+1,
                   hero6_id: ((n)%21)+1,
-                  description: "Seriously, this is a terrible idea.")
+                  strategy: "Seriously, this is a terrible idea.")
 end
 
 21.times do |n|
@@ -925,7 +925,7 @@ end
                   hero4_id: ((n+3)%21)+1,
                   hero5_id: ((n+2)%21)+1,
                   hero6_id: ((n)%21)+1,
-                  description: "Seriously, this is a terrible idea.")
+                  strategy: "Seriously, this is a terrible idea.")
 end
 
 21.times do |n|
@@ -938,7 +938,7 @@ end
                   hero4_id: ((n+3)%21)+1,
                   hero5_id: ((n)%21)+1,
                   hero6_id: ((n)%21)+1,
-                  description: "Seriously, this is a terrible idea.")
+                  strategy: "Seriously, this is a terrible idea.")
 end
 
 21.times do |n|
@@ -951,7 +951,7 @@ end
                   hero4_id: ((n+4)%21)+1,
                   hero5_id: ((n+4)%21)+1,
                   hero6_id: ((n)%21)+1,
-                  description: "Seriously, this is a terrible idea.")
+                  strategy: "Seriously, this is a terrible idea.")
 end
 
 21.times do |n|
@@ -964,7 +964,7 @@ end
                   hero4_id: ((n+4)%21)+1,
                   hero5_id: ((n+4)%21)+1,
                   hero6_id: ((n)%21)+1,
-                  description: "Seriously, this is a terrible idea.")
+                  strategy: "Seriously, this is a terrible idea.")
 end
 
 21.times do |n|
@@ -977,7 +977,7 @@ end
                   hero4_id: ((n+4)%21)+1,
                   hero5_id: ((n+4)%21)+1,
                   hero6_id: ((n)%21)+1,
-                  description: "Seriously, this is a terrible idea.")
+                  strategy: "Seriously, this is a terrible idea.")
 end
 
 21.times do |n|
@@ -990,5 +990,5 @@ end
                   hero4_id: ((n+5)%21)+1,
                   hero5_id: ((n+4)%21)+1,
                   hero6_id: ((n)%21)+1,
-                  description: "Seriously, this is a terrible idea.")
+                  strategy: "Seriously, this is a terrible idea.")
 end
