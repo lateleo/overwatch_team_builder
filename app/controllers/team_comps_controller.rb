@@ -2,18 +2,20 @@ require 'pry'
 
 class TeamCompsController < ApplicationController
   def index
-    comps = (params[:sort_method] ? sorted_comps(params[:sort_method]) : sorted_comps("Rating: High-Low"))
+    comps = (params[:sort_method] ? sort_comps(params[:sort_method]) : sort_comps("Rating: High-Low"))
     @team_comps = Kaminari.paginate_array(comps).page(params[:page])
   end
 
   def search
-    comps = (params[:name] ? search_results : comps = sorted_comps("Rating: High-Low"))
-    @team_comps = Kaminari.paginate_array(comps).page(params[:page])
+    comps = (params[:name] ? search_results : TeamComp.all)
+    sort_method = (params[:sort_method] ? params[:sort_method] : "Rating: High-Low")
+    sorted_comps = sort_comps(sort_method, comps)
+    @team_comps = Kaminari.paginate_array(sorted_comps).page(params[:page])
   end
 
   def show
     @team_comp = TeamComp.find(params[:id])
-    comments = (params[:sort_method] ? sorted_comments(params[:sort_method], @team_comp) : sorted_comments("Rating: High-Low", @team_comp))
+    comments = (params[:sort_method] ? sort_comments(params[:sort_method], @team_comp) : sort_comments("Rating: High-Low", @team_comp))
     @comments = Kaminari.paginate_array(comments).page(params[:page])
     @comment = Comment.new(author_id: current_user.id, team_comp_id: params[:id]) if current_user
   end
@@ -77,7 +79,7 @@ class TeamCompsController < ApplicationController
   end
 
   def search_results
-    comps = sorted_comps(params[:sort_method])
+    comps = TeamComp.all
     heroes = [params[:hero1_id], params[:hero2_id], params[:hero3_id], params[:hero4_id], params[:hero5_id], params[:hero6_id]].map do |h_id|
       h_id == "" ? nil : h_id.to_i
     end
@@ -87,7 +89,7 @@ class TeamCompsController < ApplicationController
     comps = comps.search_heroes(heroes) if heroes.any?
   end
 
-  def sorted_comps(sort_method)
+  def sort_comps(sort_method, comps = TeamComp.all)
     sort_options = {
       "Rating: High-Low" => [:score, :updated_integer, true],
       "Rating: Low-High" => [:neg_score, :updated_integer, true],
@@ -95,11 +97,11 @@ class TeamCompsController < ApplicationController
       "Name: Z-A" => [:name, :neg_updated_integer, true],
       "Updated: Newest first" => [:updated_integer, :score, true],
       "Updated: Oldest first" => [:updated_integer, :neg_score, false]}
-    comps = TeamComp.all.sort_by {|comp| [0,1].map {|i| comp.send(sort_options[sort_method][i])}}
-    comps.reverse! if sort_options[sort_method][2]
+    sorted_comps = comps.sort_by {|comp| [0,1].map {|i| comp.send(sort_options[sort_method][i])}}
+    sorted_comps.reverse! if sort_options[sort_method][2]
   end
 
-  def sorted_comments(sort_method, comp)
+  def sort_comments(sort_method, comp)
     sort_options = {
       "Rating: High-Low" => [:score, :updated_integer, true],
       "Rating: Low-High" => [:neg_score, :updated_integer, true],

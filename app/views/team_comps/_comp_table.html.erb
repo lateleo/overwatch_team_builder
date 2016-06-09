@@ -29,7 +29,7 @@
           <%= link_to "v", dislike_team_comp_path(comp), method: 'put', class: "downvote" %>
         </td>
         <td><%= link_to comp.author.username, comp.author %></td>
-        <td><%= comp.strategy.truncate(30) %></td>
+        <td><%= comp.strategy.truncate(50) %></td>
       </tr>
     <% end %>
   </tbody>
