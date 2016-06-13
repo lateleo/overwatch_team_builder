@@ -3,14 +3,13 @@ require 'pry'
 class TeamCompsController < ApplicationController
   def index
     comps = (params[:sort_method] ? sort_comps(params[:sort_method]) : sort_comps("Rating: High-Low"))
-    @team_comps = Kaminari.paginate_array(comps).page(params[:page])
+    @team_comps = comps
   end
 
   def search
     comps = (params[:name] ? search_results : TeamComp.all)
     sort_method = (params[:sort_method] ? params[:sort_method] : "Rating: High-Low")
-    sorted_comps = sort_comps(sort_method, comps)
-    @team_comps = Kaminari.paginate_array(sorted_comps).page(params[:page])
+    @team_comps = sort_comps(sort_method, comps)
   end
 
   def show
@@ -99,6 +98,7 @@ class TeamCompsController < ApplicationController
       "Updated: Oldest first" => [:updated_integer, :neg_score, false]}
     sorted_comps = comps.sort_by {|comp| [0,1].map {|i| comp.send(sort_options[sort_method][i])}}
     sorted_comps.reverse! if sort_options[sort_method][2]
+    Kaminari.paginate_array(sorted_comps).page(params[:page])
   end
 
   def sort_comments(sort_method, comp)
