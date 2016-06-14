@@ -12,12 +12,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  def index
-    if current_user
-      redirect_to :home
-    else
-      render :index
-    end
+  def about
+    render :about
   end
 
   def destroy
