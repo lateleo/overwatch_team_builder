@@ -1,28 +1,15 @@
-== README
+== Überwatch Source Code
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the source code for Überwatch.
 
-Things you may want to cover:
+Here's a quick overview:
 
-* Ruby version
+* Ruby 2.3.1
+* Rails 4.2.6
 
-* System dependencies
+Additional gems:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Sorcery for user authentication & encryption (link: https://github.com/NoamB/sorcery)
+* Kaminari for pagination (link: https://github.com/amatsuda/kaminari)
+* pg_search for search methods (link: https://github.com/Casecommons/pg_search)
+* acts_as_votable for upvoting/downvoting (link: https://github.com/ryanto/acts_as_votable)

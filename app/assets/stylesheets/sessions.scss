@@ -6,7 +6,9 @@ $background-color: #131419;
 $white: #ffffff;
 $link-blue: #00c3ff;
 $upvote-green: #25e825;
+$light-green: #29FF29;
 $downvote-red: #eb3434;
+$light-red: #FF3838;
 $btn-orange: #FBA729;
 $light-orange: #FFC978;
 
@@ -24,8 +26,16 @@ a {
   color: $upvote-green;
 }
 
+.upvote:hover {
+  color: $light-green;
+}
+
 .downvote {
   color: $downvote-red;
+}
+
+.downvote:hover {
+  color: $light-red;
 }
 
 textarea, input {
