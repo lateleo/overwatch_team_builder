@@ -2,10 +2,6 @@ require 'pry'
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create, :activate]
 
-  def index
-    redirect_to :root
-  end
-
   def activate
     if (@user = User.load_from_activation_token(params[:id]))
       @user.activate!
