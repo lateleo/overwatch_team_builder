@@ -886,109 +886,109 @@ Hero.create(name: "Zenyatta",
 
 #USERS
 
-User.create(username: "artburtch", email: "art@burtch.com", password: "password", password_confirmation: "password")
-
-#COMPS
-21.times do |n|
-  TeamComp.create(name: "Test Comp #{n+1}, Please Ignore",
-                  objective: "Assault, Attack",
-                  author_id: 1,
-                  hero1_id: ((n)%21)+1,
-                  hero2_id: ((n+1)%21)+1,
-                  hero3_id: ((n+2)%21)+1,
-                  hero4_id: ((n+3)%21)+1,
-                  hero5_id: ((n+4)%21)+1,
-                  hero6_id: ((n+5)%21)+1,
-                  strategy: "Seriously, this is a terrible idea.")
-end
-
-21.times do |n|
-  TeamComp.create(name: "Test Comp #{n+22}, Please Ignore",
-                  objective: "Assault, Attack",
-                  author_id: 1,
-                  hero1_id: ((n)%21)+1,
-                  hero2_id: ((n+1)%21)+1,
-                  hero3_id: ((n+2)%21)+1,
-                  hero4_id: ((n+3)%21)+1,
-                  hero5_id: ((n+4)%21)+1,
-                  hero6_id: ((n)%21)+1,
-                  strategy: "Seriously, this is a terrible idea.")
-end
-
-21.times do |n|
-  TeamComp.create(name: "Test Comp #{n+43}, Please Ignore",
-                  objective: "Assault, Attack",
-                  author_id: 1,
-                  hero1_id: ((n)%21)+1,
-                  hero2_id: ((n+1)%21)+1,
-                  hero3_id: ((n+2)%21)+1,
-                  hero4_id: ((n+3)%21)+1,
-                  hero5_id: ((n+2)%21)+1,
-                  hero6_id: ((n)%21)+1,
-                  strategy: "Seriously, this is a terrible idea.")
-end
-
-21.times do |n|
-  TeamComp.create(name: "Test Comp #{n+64}, Please Ignore",
-                  objective: "Assault, Attack",
-                  author_id: 1,
-                  hero1_id: ((n)%21)+1,
-                  hero2_id: ((n+1)%21)+1,
-                  hero3_id: ((n+2)%21)+1,
-                  hero4_id: ((n+3)%21)+1,
-                  hero5_id: ((n)%21)+1,
-                  hero6_id: ((n)%21)+1,
-                  strategy: "Seriously, this is a terrible idea.")
-end
-
-21.times do |n|
-  TeamComp.create(name: "Test Comp #{n+85}, Please Ignore",
-                  objective: "Assault, Attack",
-                  author_id: 1,
-                  hero1_id: ((n)%21)+1,
-                  hero2_id: ((n+1)%21)+1,
-                  hero3_id: ((n+2)%21)+1,
-                  hero4_id: ((n+4)%21)+1,
-                  hero5_id: ((n+4)%21)+1,
-                  hero6_id: ((n)%21)+1,
-                  strategy: "Seriously, this is a terrible idea.")
-end
-
-21.times do |n|
-  TeamComp.create(name: "Test Comp #{n+106}, Please Ignore",
-                  objective: "Assault, Attack",
-                  author_id: 1,
-                  hero1_id: ((n)%21)+1,
-                  hero2_id: ((n)%21)+1,
-                  hero3_id: ((n+2)%21)+1,
-                  hero4_id: ((n+4)%21)+1,
-                  hero5_id: ((n+4)%21)+1,
-                  hero6_id: ((n)%21)+1,
-                  strategy: "Seriously, this is a terrible idea.")
-end
-
-21.times do |n|
-  TeamComp.create(name: "Test Comp #{n+127}, Please Ignore",
-                  objective: "Assault, Attack",
-                  author_id: 1,
-                  hero1_id: ((n)%21)+1,
-                  hero2_id: ((n+2)%21)+1,
-                  hero3_id: ((n+2)%21)+1,
-                  hero4_id: ((n+4)%21)+1,
-                  hero5_id: ((n+4)%21)+1,
-                  hero6_id: ((n)%21)+1,
-                  strategy: "Seriously, this is a terrible idea.")
-end
-
-21.times do |n|
-  TeamComp.create(name: "Test Comp #{n+148}, Please Ignore",
-                  objective: "Assault, Attack",
-                  author_id: 1,
-                  hero1_id: ((n)%21)+1,
-                  hero2_id: ((n)%21)+1,
-                  hero3_id: ((n+2)%21)+1,
-                  hero4_id: ((n+5)%21)+1,
-                  hero5_id: ((n+4)%21)+1,
-                  hero6_id: ((n)%21)+1,
-                  strategy: "Seriously, this is a terrible idea.")
-end
+# User.create(username: "artburtch", email: "art@burtch.com", password: "password", password_confirmation: "password")
+#
+# #COMPS
+# 21.times do |n|
+#   TeamComp.create(name: "Test Comp #{n+1}, Please Ignore",
+#                   objective: "Assault, Attack",
+#                   author_id: 1,
+#                   hero1_id: ((n)%21)+1,
+#                   hero2_id: ((n+1)%21)+1,
+#                   hero3_id: ((n+2)%21)+1,
+#                   hero4_id: ((n+3)%21)+1,
+#                   hero5_id: ((n+4)%21)+1,
+#                   hero6_id: ((n+5)%21)+1,
+#                   strategy: "Seriously, this is a terrible idea.")
+# end
+#
+# 21.times do |n|
+#   TeamComp.create(name: "Test Comp #{n+22}, Please Ignore",
+#                   objective: "Assault, Attack",
+#                   author_id: 1,
+#                   hero1_id: ((n)%21)+1,
+#                   hero2_id: ((n+1)%21)+1,
+#                   hero3_id: ((n+2)%21)+1,
+#                   hero4_id: ((n+3)%21)+1,
+#                   hero5_id: ((n+4)%21)+1,
+#                   hero6_id: ((n)%21)+1,
+#                   strategy: "Seriously, this is a terrible idea.")
+# end
+#
+# 21.times do |n|
+#   TeamComp.create(name: "Test Comp #{n+43}, Please Ignore",
+#                   objective: "Assault, Attack",
+#                   author_id: 1,
+#                   hero1_id: ((n)%21)+1,
+#                   hero2_id: ((n+1)%21)+1,
+#                   hero3_id: ((n+2)%21)+1,
+#                   hero4_id: ((n+3)%21)+1,
+#                   hero5_id: ((n+2)%21)+1,
+#                   hero6_id: ((n)%21)+1,
+#                   strategy: "Seriously, this is a terrible idea.")
+# end
+#
+# 21.times do |n|
+#   TeamComp.create(name: "Test Comp #{n+64}, Please Ignore",
+#                   objective: "Assault, Attack",
+#                   author_id: 1,
+#                   hero1_id: ((n)%21)+1,
+#                   hero2_id: ((n+1)%21)+1,
+#                   hero3_id: ((n+2)%21)+1,
+#                   hero4_id: ((n+3)%21)+1,
+#                   hero5_id: ((n)%21)+1,
+#                   hero6_id: ((n)%21)+1,
+#                   strategy: "Seriously, this is a terrible idea.")
+# end
+#
+# 21.times do |n|
+#   TeamComp.create(name: "Test Comp #{n+85}, Please Ignore",
+#                   objective: "Assault, Attack",
+#                   author_id: 1,
+#                   hero1_id: ((n)%21)+1,
+#                   hero2_id: ((n+1)%21)+1,
+#                   hero3_id: ((n+2)%21)+1,
+#                   hero4_id: ((n+4)%21)+1,
+#                   hero5_id: ((n+4)%21)+1,
+#                   hero6_id: ((n)%21)+1,
+#                   strategy: "Seriously, this is a terrible idea.")
+# end
+#
+# 21.times do |n|
+#   TeamComp.create(name: "Test Comp #{n+106}, Please Ignore",
+#                   objective: "Assault, Attack",
+#                   author_id: 1,
+#                   hero1_id: ((n)%21)+1,
+#                   hero2_id: ((n)%21)+1,
+#                   hero3_id: ((n+2)%21)+1,
+#                   hero4_id: ((n+4)%21)+1,
+#                   hero5_id: ((n+4)%21)+1,
+#                   hero6_id: ((n)%21)+1,
+#                   strategy: "Seriously, this is a terrible idea.")
+# end
+#
+# 21.times do |n|
+#   TeamComp.create(name: "Test Comp #{n+127}, Please Ignore",
+#                   objective: "Assault, Attack",
+#                   author_id: 1,
+#                   hero1_id: ((n)%21)+1,
+#                   hero2_id: ((n+2)%21)+1,
+#                   hero3_id: ((n+2)%21)+1,
+#                   hero4_id: ((n+4)%21)+1,
+#                   hero5_id: ((n+4)%21)+1,
+#                   hero6_id: ((n)%21)+1,
+#                   strategy: "Seriously, this is a terrible idea.")
+# end
+#
+# 21.times do |n|
+#   TeamComp.create(name: "Test Comp #{n+148}, Please Ignore",
+#                   objective: "Assault, Attack",
+#                   author_id: 1,
+#                   hero1_id: ((n)%21)+1,
+#                   hero2_id: ((n)%21)+1,
+#                   hero3_id: ((n+2)%21)+1,
+#                   hero4_id: ((n+5)%21)+1,
+#                   hero5_id: ((n+4)%21)+1,
+#                   hero6_id: ((n)%21)+1,
+#                   strategy: "Seriously, this is a terrible idea.")
+# end

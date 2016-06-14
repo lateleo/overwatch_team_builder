@@ -1,0 +1,6 @@
+<h1>User Created Successfully</h1>
+
+<p>You have successfully created an account.<br>
+A confirmation email has been sent to <%= @user.email %>, and should arrive shortly.<br>
+If you have not recieved it, please check your junk/spam folder. Otherwise,
+<%= link_to 'click here to re-send', resend_activation_path(@user) %>.

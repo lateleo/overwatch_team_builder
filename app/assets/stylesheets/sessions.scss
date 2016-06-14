@@ -7,6 +7,8 @@ $white: #ffffff;
 $link-blue: #00c3ff;
 $upvote-green: #25e825;
 $downvote-red: #eb3434;
+$btn-orange: #FBA729;
+$light-orange: #FFC978;
 
 html, body {
   background-color: $background-color;
@@ -28,4 +30,24 @@ a {
 
 textarea, input {
   background-color: $background-color;
+}
+
+.btn {
+  background-color: $btn-orange;
+  color: $white;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus,
+.btn:hover,
+.btn:focus,
+.btn.focus,
+.btn:active,
+.btn.active {
+  background-color: $light-orange;
+  color: $white;
 }
