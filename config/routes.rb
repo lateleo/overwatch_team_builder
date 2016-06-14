@@ -22,12 +22,12 @@ Rails.application.routes.draw do
 
   root 'team_comps#index'
 
-  resources :users do
+  resources :users, except: [:index] do
     member do
       get :activate
     end
   end
-  
+
   get '/users/:id/resend_activation', to: 'users#resend_activation', as: 'resend_activation'
   resources :sessions, except: [:edit, :update]
 

@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def resend_activation
     @user = User.find(params[:id])
-    UserMailer.activation_needed_email(@user)
+    UserMailer.activation_needed_email(@user).deliver
     render :create
   end
 
