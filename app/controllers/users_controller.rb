@@ -1,5 +1,15 @@
+require 'pry'
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create, :activate]
+
+  def activate
+    if (@user = User.load_from_activation_token(params[:id]))
+      @user.activate!
+      render :activate
+    else
+      not_authenticated
+    end
+  end
 
   def new
     redirect_to(current_user) if current_user
@@ -9,14 +19,20 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to(:back, notice: "User saved.")
+      render :create
     else
       render :new
     end
   end
 
+  def resend_activation
+    @user = User.find(params[:id])
+    UserMailer.activation_needed_email(@user).deliver
+    render :create
+  end
+
   def show
-    @user = User.find(params['id'])
+    @user = User.find(params[:id])
     @team_comps = Kaminari.paginate_array(sorted_comps("Rating: High-Low")).page(params[:page])
   end
 

@@ -22,9 +22,11 @@
 <% end %>
 
 <div class="row">
-  <div class="col-sm-3">
-    <%= paginate @team_comps %>
-  </div>
+  <% if @team_comps.count > 20 %>
+    <div class="col-sm-3">
+      <%= paginate @team_comps %>
+    </div>
+  <% end %>
   <div class="col-sm-3">
     <%= form_tag team_comps_path, :method => 'get' do %>
       <%= label_tag :sort_method, "Sort By" %>

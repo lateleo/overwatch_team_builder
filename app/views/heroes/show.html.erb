@@ -1,3 +1,4 @@
+<div class="row">
 <h1><%= @hero.name %></h1>
 
 <ul>
@@ -29,3 +30,4 @@
 <% if @hero.passive %>
   <%= render partial: "passive", locals: {passive: @hero.passive} %>
 <% end %>
+</div>

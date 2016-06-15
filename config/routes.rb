@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'links/upvote'
-
-  get '/team_comps/search', to: 'team_comps#search', as: 'search'
-  resources :team_comps
+  root 'team_comps#index'
   resources :team_comps do
-    resources :comments, only: [:create, :destroy]
-    resources :comments do
+    resources :comments, only: [:create, :destroy] do
       member do
         put "like", to: "comments#upvote"
         put "dislike", to: "comments#downvote"
@@ -17,16 +13,22 @@ Rails.application.routes.draw do
       put "dislike", to: "team_comps#downvote"
     end
   end
+  get '/team_comps/search', to: 'team_comps#search', as: 'search'
 
   resources :heroes, only: [:index, :show]
 
-  root 'team_comps#index'
+  resources :users, except: [:index] do
+    member do
+      get :activate
+    end
+  end
+  resources :password_resets, only: [:create, :edit, :update]
+  get '/users/:id/resend_activation', to: 'users#resend_activation', as: 'resend_activation'
 
-  resources :users, except: [:index]
-  resources :sessions, except: [:edit, :update]
-
+  resources :sessions, only: [:create]
   get '/login', to: 'sessions#new', as: 'login'
   get '/logout', to: 'sessions#destroy', as: 'logout'
+  get '/about', to: 'sessions#about', as: 'about'
 
 
 

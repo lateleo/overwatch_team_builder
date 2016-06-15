@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OverwatchTeamBuilder</title>
+  <%= favicon_link_tag(source = 'favicon.png') %>
+  <title>Überwatch</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,20 +10,40 @@
 <body>
 <div class="container">
   <div class="text-right">
-  <% if current_user %>
-    <p>Logged in as <%= link_to current_user.username, current_user %> -
-    <%= link_to "Logout", logout_path %></p>
-  <% else %>
-    <p>Not logged in. <%= link_to "Log In", login_path %> -
-    <%= link_to "Sign Up", new_user_path %></p>
-  <% end %>
+    <% if current_user %>
+      <p>Logged in as <%= link_to current_user.username, current_user %> -
+      <%= link_to "Logout", logout_path %></p>
+    <% else %>
+      <p>Not logged in. <%= link_to "Log In", login_path %> -
+      <%= link_to "Sign Up", new_user_path %></p>
+    <% end %>
   </div>
 
-<h4><%= link_to "Home", root_path %> -
-<%= link_to "Heroes", heroes_path %> -
-<%= link_to "Back", :back %></h4>
 
-<%= yield %>
+  <%= link_to(image_tag('logoWhite.png', height: "80"), root_path) %>
+  <h4>
+    <%= link_to "Home", root_path %> -
+    <%= link_to "Heroes", heroes_path %> -
+    <%= link_to "About", about_path %> -
+    <%= link_to "GitHub", 'https://github.com/lateleo/overwatch_team_builder' %> -
+    <%= link_to "Back", :back %>
+  </h4>
+
+  <%= yield %>
+  <div class="row text-center">
+    -------------------------------------------------------------------------
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h4>
+        <%= link_to "Home", root_path %> -
+        <%= link_to "Heroes", heroes_path %> -
+        <%= link_to "About", about_path %> -
+        <%= link_to "GitHub", 'https://github.com/lateleo/overwatch_team_builder' %> -
+        <%= link_to "Back", :back %>
+      </h4>
+    </div>
+  </div>
 </div>
 </body>
 </html>

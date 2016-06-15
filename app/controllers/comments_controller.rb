@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     @team_comp = TeamComp.find(params['team_comp_id'])
     @comment = Comment.find(params[:id])
     @comment.upvote_by current_user
-    @comment.update_attributes(rating: @comment.score)
     redirect_to :back
   end
 
@@ -11,7 +10,6 @@ class CommentsController < ApplicationController
     @team_comp = TeamComp.find(params['team_comp_id'])
     @comment = Comment.find(params[:id])
     @comment.downvote_by current_user
-    @comment.update_attributes(rating: @comment.score)
     redirect_to :back
   end
 

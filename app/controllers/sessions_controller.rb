@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.new
+    if current_user
+      redirect_to root_path
+    else
+      @user = User.new
+      render :new
+    end
   end
 
   def create
@@ -12,12 +17,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  def index
-    if current_user
-      redirect_to :home
-    else
-      render :index
-    end
+  def about
+    render :about
   end
 
   def destroy

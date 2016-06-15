@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules = [:user_activation, :reset_password]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -13,13 +13,11 @@ Rails.application.config.sorcery.configure do |config|
   #
   # config.not_authenticated_action =
 
-
   # When a non logged in user tries to enter a page that requires login, save
   # the URL he wanted to reach, and send him there after login, using 'redirect_back_or_to'.
   # Default: `true`
   #
   # config.save_return_to_url =
-
 
   # Set domain option for cookies; Useful for remember_me submodule.
   # Default: `nil`
@@ -282,7 +280,7 @@ Rails.application.config.sorcery.configure do |config|
     # your mailer class. Required.
     # Default: `nil`
     #
-    # user.user_activation_mailer =
+    user.user_activation_mailer = UserMailer
 
 
     # when true sorcery will not automatically
@@ -296,13 +294,13 @@ Rails.application.config.sorcery.configure do |config|
     # activation needed email method on your mailer class.
     # Default: `:activation_needed_email`
     #
-    # user.activation_needed_email_method_name =
+    user.activation_needed_email_method_name = :activation_needed_email
 
 
     # activation success email method on your mailer class.
     # Default: `:activation_success_email`
     #
-    # user.activation_success_email_method_name =
+    user.activation_success_email_method_name = :activation_success_email
 
 
     # do you want to prevent or allow users that did not activate by email to login?
@@ -333,13 +331,13 @@ Rails.application.config.sorcery.configure do |config|
     # mailer class. Needed.
     # Default: `nil`
     #
-    # user.reset_password_mailer =
+    user.reset_password_mailer = UserMailer
 
 
     # reset password email method on your mailer class.
     # Default: `:reset_password_email`
     #
-    # user.reset_password_email_method_name =
+    user.reset_password_email_method_name = :reset_password_email
 
 
     # when true sorcery will not automatically
