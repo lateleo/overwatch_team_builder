@@ -37,7 +37,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
+    if @user == current_user
+      render :edit
+    else
+      redirect_to edit_user_path(current_user)
+    end
   end
 
   def update
@@ -49,6 +54,27 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  # These will be added when changing emails is implemented
+
+  # def edit_password
+  #   @user = User.find(params[:id])
+  #   if @user == current_user
+  #     render :edit_password
+  #   else
+  #     redirect_to edit_user_path(current_user)
+  #   end
+  # end
+  #
+  # def update_password
+  #   @user = User.find(params[:id])
+  #
+  #   if @user.update_attributes(user_params)
+  #     redirect_to @user, notice: "User successfully updated."
+  #   else
+  #     render :edit_password
+  #   end
+  # end
 
   def destroy
   end

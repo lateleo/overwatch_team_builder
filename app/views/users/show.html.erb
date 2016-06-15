@@ -1,7 +1,7 @@
 <h1>User: <%= @user.username %></h1>
 
 <% if @user == current_user %>
-<%= link_to "Edit Email/Username", edit_user_path %> -
+<!-- <%= link_to "Change Email", edit_user_path %> - -->
 <%= link_to "Edit Password", edit_user_path %>
 <% end %>
 
