@@ -1,0 +1,30 @@
+<h1>Choose a New Password</h1>
+<%= form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f| %>
+  <% if f.object.errors.any? %>
+  <div class="errors" id="errors">
+    <% if f.object.errors.any? %>
+      <ul>
+        <% f.object.errors.full_messages.each do |e| %>
+          <li><%= e %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= @user.email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= submit_tag nil, class: "btn btn-default" %>
+  </div>
+<% end %>

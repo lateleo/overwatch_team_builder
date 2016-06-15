@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       get :activate
     end
   end
+  resources :password_resets, only: [:create, :edit, :update]
   get '/users/:id/resend_activation', to: 'users#resend_activation', as: 'resend_activation'
 
   resources :sessions, only: [:create]
