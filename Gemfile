@@ -33,6 +33,9 @@ gem "pg_search"
 # used for upvotes
 gem "acts_as_votable"
 
+# used for debugging things
+gem "pry"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,8 +48,7 @@ gem "acts_as_votable"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # used for debugging things
-  # gem "pry"
+
   # Manage environment variables
   gem 'dotenv-rails'
 end
