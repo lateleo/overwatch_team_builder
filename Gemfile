@@ -24,9 +24,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # used for user login/logout security
 gem "sorcery"
 
-# used for debugging things
-gem "pry"
-
 # used for pagination
 gem "kaminari"
 
@@ -48,6 +45,8 @@ gem "acts_as_votable"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # used for debugging things
+  gem "pry"
   # Manage environment variables
   gem 'dotenv-rails'
 end

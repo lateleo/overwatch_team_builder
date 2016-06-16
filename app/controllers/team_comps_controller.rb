@@ -1,5 +1,3 @@
-require 'pry'
-
 class TeamCompsController < ApplicationController
   def index
     comps = (params[:sort_method] ? sort_comps(params[:sort_method]) : sort_comps("Rating: High-Low"))
