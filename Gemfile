@@ -63,4 +63,6 @@ group :test do
   gem 'minitest-rg'
 end
 
+gem 'rails_12factor', group: :production
+
 ruby '2.3.1'

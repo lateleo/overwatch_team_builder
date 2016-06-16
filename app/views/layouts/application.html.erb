@@ -19,7 +19,6 @@
     <% end %>
   </div>
 
-
   <%= link_to(image_tag('logoWhite.png', height: "80"), root_path) %>
   <h4>
     <%= link_to "Home", root_path %> -
@@ -30,8 +29,9 @@
   </h4>
 
   <%= yield %>
+
   <div class="row text-center">
-    -------------------------------------------------------------------------
+    __________________________________________________________________________
   </div>
   <div class="row">
     <div class="col-sm-12 text-center">
@@ -43,6 +43,9 @@
         <%= link_to "Back", :back %>
       </h4>
     </div>
+  </div>
+  <div class="row text-center">
+    <%= image_tag('circle_icon_light.png', height: "150") %>
   </div>
 </div>
 </body>
