@@ -12,4 +12,5 @@
 !/log/.keep
 /tmp
 .env
+/app/views/layouts/mailer.text.erb
 /app/views/user_mailer/activation_ignore.text.erb
