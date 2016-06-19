@@ -12,3 +12,4 @@
 !/log/.keep
 /tmp
 .env
+/app/views/user_mailer/activation_ignore.text.erb
