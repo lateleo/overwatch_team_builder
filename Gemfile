@@ -33,8 +33,8 @@ gem "pg_search"
 # used for upvotes
 gem "acts_as_votable"
 
-# used for debugging things
-gem "pry"
+# # used for debugging things
+# gem "pry"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
