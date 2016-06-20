@@ -1,4 +1,3 @@
-require 'pry'
 class TeamComp < ActiveRecord::Base
   include PgSearch
   acts_as_votable
