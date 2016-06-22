@@ -46,8 +46,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
-    if @user.update_attributes(user_params)
+    if @user.valid_password?(params[:old_password]) && @user.update_attributes(user_params)
       redirect_to @user, notice: "User successfully updated."
     else
       render :edit
