@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'team_comps#index'
+  get '/team_comps/search', to: 'team_comps#search', as: 'search'
   resources :team_comps do
     resources :comments, only: [:create, :destroy] do
       member do
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
       put "dislike", to: "team_comps#downvote"
     end
   end
-  get '/team_comps/search', to: 'team_comps#search', as: 'search'
 
   resources :heroes, only: [:index, :show]
 
