@@ -42,6 +42,14 @@ textarea, input {
   background-color: $background-color;
 }
 
+select {
+  background-color: $background-color;
+}
+
+option {
+  color: $background-color;
+}
+
 .btn {
   background-color: $btn-orange;
   color: $white;
